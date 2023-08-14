@@ -40,6 +40,6 @@ const StyledImage = styled(Image)`
 
 const StyledTheme = styled.h2`
   text-align: center;
-  font-size: 1rem;
+  font-size: 1.2rem;
   margin-bottom: 3rem;
 `;
