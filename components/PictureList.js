@@ -5,32 +5,22 @@ import pictures from "../db.js";
 
 export default function PictureList() {
   return (
-    <>
-      <StyledArticle>
-        <ul>
-          {pictures.map((picture) => (
-            <li key={picture.id}>
-              <StyledImage
-                src={picture.image}
-                alt={picture.theme}
-                height={300}
-                width={200}
-              />
+    <ul>
+      {pictures.map((picture) => (
+        <li key={picture.id}>
+          <StyledImage
+            src={picture.image}
+            alt={picture.theme}
+            height={300}
+            width={200}
+          />
 
-              <StyledTheme>{picture.theme}</StyledTheme>
-            </li>
-          ))}
-        </ul>
-      </StyledArticle>
-    </>
+          <StyledTheme>{picture.theme}</StyledTheme>
+        </li>
+      ))}
+    </ul>
   );
 }
-
-const StyledArticle = styled.article`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-`;
 
 const StyledImage = styled(Image)`
   object-fit: contain;
