@@ -7,18 +7,20 @@ export default function PictureList() {
   return (
     <>
       <StyledArticle>
-          <ul  key={picture.id}>{pictures.map((picture) => (
-            <li>
+        <ul>
+          {pictures.map((picture) => (
+            <li key={picture.id}>
               <StyledImage
                 src={picture.image}
                 alt={picture.theme}
                 height={300}
                 width={200}
               />
+
+              <StyledTheme>{picture.theme}</StyledTheme>
             </li>
-            <StyledTheme>{picture.theme}</StyledTheme>
-            ))}
-          </ul>
+          ))}
+        </ul>
       </StyledArticle>
     </>
   );
