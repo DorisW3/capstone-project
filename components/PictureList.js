@@ -7,8 +7,7 @@ export default function PictureList() {
   return (
     <>
       <StyledArticle>
-        {pictures.map((picture) => (
-          <ul key={picture.id}>
+          <ul  key={picture.id}>{pictures.map((picture) => (
             <li>
               <StyledImage
                 src={picture.image}
@@ -18,12 +17,11 @@ export default function PictureList() {
               />
             </li>
             <StyledTheme>{picture.theme}</StyledTheme>
+            ))}
           </ul>
-        ))}
       </StyledArticle>
     </>
   );
-  console.log(pictures);
 }
 
 const StyledArticle = styled.article`
