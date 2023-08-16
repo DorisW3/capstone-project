@@ -26,4 +26,9 @@ const StyledMain = styled.main`
   display: flex;
   flex-direction: column;
   align-items: center;
+  width: min(600px, 80%);
+  margin-inline: auto;
+  & ul {
+    width: 100%;
+  }
 `;

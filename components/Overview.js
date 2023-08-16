@@ -2,12 +2,13 @@ import { Fragment } from "react";
 import Image from "next/image.js";
 import { styled } from "styled-components";
 import pictures from "../db.js";
+import StyledImage from "./StyledImage.js";
 
 export default function Overview() {
   return (
     <ul>
       {pictures.map((picture) => (
-        <li key={picture.id}>
+        <StyledListItem key={picture.id} className="image-styling__container">
           <StyledImage
             src={picture.image}
             alt={picture.theme}
@@ -16,20 +17,18 @@ export default function Overview() {
           />
 
           <StyledTheme>{picture.username}</StyledTheme>
-        </li>
+        </StyledListItem>
       ))}
     </ul>
   );
 }
 
-const StyledImage = styled(Image)`
-  object-fit: contain;
-  width: 100%;
-  height: 100%;
-`;
-
 const StyledTheme = styled.h2`
   text-align: center;
   font-size: 1.2rem;
   margin-bottom: 3rem;
+`;
+
+const StyledListItem = styled.li`
+  position: relative;
 `;
