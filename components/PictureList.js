@@ -10,12 +10,7 @@ export default function PictureList() {
         .filter((picture) => picture.username === "dolorisi")
         .map((picture) => (
           <li key={picture.id}>
-            <StyledImage
-              src={picture.image}
-              alt={picture.theme}
-              height={300}
-              width={200}
-            />
+            <StyledImage src={picture.image} alt={picture.theme} />
 
             <StyledTheme>{picture.theme}</StyledTheme>
           </li>
