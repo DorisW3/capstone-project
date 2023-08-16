@@ -6,18 +6,20 @@ import pictures from "../db.js";
 export default function PictureList() {
   return (
     <ul>
-      {pictures.map((picture) => (
-        <li key={picture.id}>
-          <StyledImage
-            src={picture.image}
-            alt={picture.theme}
-            height={300}
-            width={200}
-          />
+      {pictures
+        .filter((picture) => picture.username === "dolorisi")
+        .map((picture) => (
+          <li key={picture.id}>
+            <StyledImage
+              src={picture.image}
+              alt={picture.theme}
+              height={300}
+              width={200}
+            />
 
-          <StyledTheme>{picture.theme}</StyledTheme>
-        </li>
-      ))}
+            <StyledTheme>{picture.theme}</StyledTheme>
+          </li>
+        ))}
     </ul>
   );
 }
