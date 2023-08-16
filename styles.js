@@ -17,5 +17,5 @@ export default createGlobalStyle`
     list-style-type: none;
   }
 
-
+ 
 `;
