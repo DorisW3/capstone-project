@@ -4,8 +4,8 @@ import styled from "styled-components";
 export default function Navbar() {
   return (
     <StyledNavigation>
-      <Link href={"/index.js"}>Overview</Link>
-      <Link href={"/myart.js"}>My Art</Link>
+      <StyledLink href={"/"}>Overview</StyledLink>
+      <StyledLink href={"/myart"}>My Art</StyledLink>
     </StyledNavigation>
   );
 }
