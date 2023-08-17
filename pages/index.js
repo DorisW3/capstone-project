@@ -1,6 +1,4 @@
 import { styled } from "styled-components";
-import PictureList from "../components/PictureList";
-import pictures from "../db.js";
 import Overview from "@/components/Overview";
 
 export default function Homepage() {
