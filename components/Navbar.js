@@ -12,11 +12,12 @@ export default function Navbar() {
 
 const StyledNavigation = styled.nav`
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
+  margin-bottom: 2rem;
 `;
 
 const StyledLink = styled(Link)`
-  background-color: gray;
+  background-color: slateblue;
   border-radius: 0.5rem;
   padding: 0.5rem;
   color: white;
