@@ -11,6 +11,9 @@ export default function Navbar() {
 }
 
 const StyledNavigation = styled.nav`
+  position: fixed;
+  bottom: 0;
+  width: min(600px, 100%);
   display: flex;
   justify-content: space-around;
   margin-bottom: 2rem;
