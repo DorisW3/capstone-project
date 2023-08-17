@@ -1,4 +1,3 @@
-import { Fragment } from "react";
 import Image from "next/image.js";
 import { styled } from "styled-components";
 import pictures from "../db.js";
