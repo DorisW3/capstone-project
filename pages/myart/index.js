@@ -1,12 +1,13 @@
 import { styled } from "styled-components";
-import Overview from "@/components/Overview";
+import PictureList from "../../components/PictureList";
+import pictures from "../../db.js";
 
-export default function Homepage() {
+export default function MyArt() {
   return (
     <>
-      <Heading>Overview</Heading>
+      <Heading>My Art</Heading>
       <StyledMain>
-        <Overview />
+        <PictureList pictures={pictures} />
       </StyledMain>
     </>
   );

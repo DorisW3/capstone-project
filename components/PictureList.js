@@ -16,6 +16,7 @@ export default function PictureList() {
               alt={picture.theme}
               height={300}
               width={200}
+              priority={true} // bei Bildern mit großer Datenmenge, verbessert der Code das laden
             />
 
             <StyledTheme>{picture.theme}</StyledTheme>

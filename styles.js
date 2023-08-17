@@ -11,6 +11,10 @@ export default createGlobalStyle`
 
   body {
     font-family: system-ui;
+    margin: auto;
+    text-align: center;
+    width: 600px;
+    color: gray;
   }
 
   ul {
