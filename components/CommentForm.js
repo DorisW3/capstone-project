@@ -1,7 +1,6 @@
-import "./form.css";
 import { uid } from "uid";
 
-export default function CommentForm({ onAddEntry }) {
+export default function CommentForm({ addEntry }) {
   function handleSubmitComment(event) {
     event.preventDefault();
 
@@ -18,20 +17,20 @@ export default function CommentForm({ onAddEntry }) {
       date: date,
     };
 
-    onAddEntry(newEntry);
+    addEntry(newEntry);
     event.target.reset();
-    event.target.elements.motto.focus();
+    event.target.elements.title.focus();
   }
 
   return (
     <form className="form" onSubmit={handleSubmitComment}>
       <h2 className="h2">new entry</h2>
       <div className="title__container">
-        <label htmlFor="title">title</label>
+        <label htmlFor="title">Title</label>
         <input
           className="title"
           type="text"
-          maxlength="50"
+          maxLength="50"
           rows="2"
           id="title"
           required
@@ -43,7 +42,7 @@ export default function CommentForm({ onAddEntry }) {
           className="comment"
           type="text"
           id="comment"
-          maxlength="480"
+          maxLength="480"
           required
         ></textarea>
       </div>
