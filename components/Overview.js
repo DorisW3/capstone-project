@@ -1,6 +1,6 @@
 import Image from "next/image.js";
 import { styled } from "styled-components";
-import pictures from "../picturesdb.js";
+import pictures from "../db.js";
 import StyledImage from "./StyledImage.js";
 
 export default function Overview() {

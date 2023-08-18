@@ -1,7 +1,7 @@
 import { uid } from "uid";
 
-export default function CommentForm({ addEntry }) {
-  function handleSubmitComment(event) {
+export default function EntryForm({ addEntry }) {
+  function handleSubmitEntry(event) {
     event.preventDefault();
 
     const formData = new FormData(event.target);
@@ -23,8 +23,8 @@ export default function CommentForm({ addEntry }) {
   }
 
   return (
-    <form className="form" onSubmit={handleSubmitComment}>
-      <h2 className="h2">new entry</h2>
+    <form className="form" onSubmit={handleSubmitEntry}>
+      <h2 className="h2">New Entry</h2>
       <div className="title__container">
         <label htmlFor="title">Title</label>
         <input
