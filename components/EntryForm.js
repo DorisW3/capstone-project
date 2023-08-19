@@ -2,19 +2,22 @@ import { useState } from "react";
 import { uid } from "uid";
 
 export default function EntryForm({ onAddEntry }) {
-  /* const [formData, setFormData] = useState({
-    title: "",
-    comment: "",
-  });
- */
   function handleSubmitEntry(event) {
     event.preventDefault();
 
-    const formData = new FormData(event.target);
-    const data = Object.fromEntries(formData);
+    const date = new Date().toLocaleDateString("en-gb", {
+      dateStyle: "medium",
+    });
 
-    const addEntry = (date, formData);
-    console.log(formData);
+    const newEntry = {
+      id: uid(),
+      date: date,
+      title: title,
+      comment: comment,
+    };
+
+    onAddEntry(newEntry);
+    console.log(newEntry);
 
     event.target.reset();
     event.target.elements.title.focus();

@@ -4,25 +4,19 @@ import { useState } from "react";
 import initialEntries from "@/commentsdb";
 import { uid } from "uid";
 
-export default function DetailsComments({ onSubmit, entriesList }) {
-  const date = new Date().toLocaleDateString("en-gb", {
-    dateStyle: "medium",
-  });
-
-  const newEntry = {
-    id: uid,
-    date: date,
-  };
-
+export default function DetailsComments({
+  onSubmit,
+  entriesList,
+  handleAddEntry,
+}) {
   return (
     <>
       <h1>Detail Page</h1>
       <main>
-        <EntryForm onSubmit={onSubmit} />
+        <EntryForm onAddEntry={handleAddEntry} />
         <EntriesSection
-          entries={entries}
-          onAddEntry={handleAddEntry}
           entriesList={entriesList}
+          handleAddEntry={handleAddEntry}
         />
       </main>
     </>
