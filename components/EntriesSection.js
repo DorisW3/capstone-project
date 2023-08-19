@@ -2,7 +2,7 @@ import { Fragment } from "react";
 import Divider from "@mui/material/Divider";
 import { EntriesList } from "./EntriesList";
 
-export default function EntriesSection({ entries }) {
+export default function EntriesSection({ entries, entriesList }) {
   return (
     <section className="entries-section">
       <div className="entries-section__entries">
@@ -14,6 +14,7 @@ export default function EntriesSection({ entries }) {
               title={entry.title}
               comment={entry.comment}
               id={entry.id}
+              entriesList={entriesList}
             />
           </Fragment>
         ))}

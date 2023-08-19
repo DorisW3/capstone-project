@@ -15,7 +15,7 @@ const initialEntries = [
   {
     id: 3,
     date: "01.08.2023",
-    title: "lovly collage theme",
+    title: "lovely collage theme",
     comment:
       "I like the design method. It looks a little bit like bullet journaling. I tried it once, but this was nothing for me. The arrangement never worked...",
   },
