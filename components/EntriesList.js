@@ -1,5 +1,4 @@
 export function EntriesList({ entriesList }) {
-  console.log(entriesList);
   return (
     <>
       {entriesList.map((entry) => (

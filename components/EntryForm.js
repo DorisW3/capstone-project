@@ -1,9 +1,11 @@
-import { useState } from "react";
 import { uid } from "uid";
 
-export default function EntryForm({ onAddEntry, title, comment }) {
+export default function EntryForm({ onAddEntry }) {
   function handleSubmitEntry(event) {
     event.preventDefault();
+
+    const formData = new FormData(event.target);
+    const data = Object.fromEntries(formData);
 
     const date = new Date().toLocaleDateString("en-gb", {
       dateStyle: "medium",
@@ -12,12 +14,11 @@ export default function EntryForm({ onAddEntry, title, comment }) {
     const newEntry = {
       id: uid(),
       date: date,
-      title: title,
-      comment: comment,
+      title: data.title,
+      comment: data.comment,
     };
 
     onAddEntry(newEntry);
-    console.log(newEntry);
 
     event.target.reset();
     event.target.elements.title.focus();
@@ -34,6 +35,7 @@ export default function EntryForm({ onAddEntry, title, comment }) {
           maxLength="50"
           rows="2"
           id="title"
+          name="title"
           required
         ></input>
       </div>
@@ -43,6 +45,7 @@ export default function EntryForm({ onAddEntry, title, comment }) {
           className="comment"
           type="text"
           id="comment"
+          name="comment"
           maxLength="480"
           required
         ></textarea>
