@@ -1,4 +1,4 @@
-const entries = [
+const initialEntries = [
   {
     id: 1,
     date: "05.07.2023",
@@ -28,4 +28,4 @@ const entries = [
   },
 ];
 
-export default entries;
+export default initialEntries;

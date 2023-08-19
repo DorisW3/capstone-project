@@ -10,12 +10,7 @@ export default function EntryForm({ addEntry }) {
       dateStyle: "medium",
     });
 
-    const newEntry = {
-      id: uid(),
-      title: data.title,
-      comment: data.comment,
-      date: date,
-    };
+    console.log(data);
 
     addEntry(newEntry);
     event.target.reset();
@@ -23,7 +18,7 @@ export default function EntryForm({ addEntry }) {
   }
 
   return (
-    <form className="form" onSubmit={handleSubmitEntry}>
+    <form className="entry-form" onSubmit={handleSubmitEntry}>
       <h2 className="h2">New Entry</h2>
       <div className="title__container">
         <label htmlFor="title">Title</label>

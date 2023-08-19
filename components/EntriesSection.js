@@ -1,9 +1,8 @@
-import entries from "@/commentsdb";
 import { Fragment } from "react";
 import Divider from "@mui/material/Divider";
-import EntriesList from "./EntryForm";
+import { EntriesList } from "./EntriesList";
 
-export default function EntriesSection() {
+export default function EntriesSection({ entries }) {
   return (
     <section className="entries-section">
       <div className="entries-section__entries">
