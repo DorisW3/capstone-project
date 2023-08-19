@@ -4,15 +4,15 @@ import { EntriesList } from "./EntriesList";
 
 export default function EntriesSection({ entriesList }) {
   return (
-    <section className="entries-section">
+    /*  <section className="entries-section">
       <div className="entries-section__entries">
         {entriesList.map((entry, index) => (
           <Fragment key={entry.id}>
-            {index > 0 ? <Divider /> : null}
-            <EntriesList entriesList={entriesList} />
-          </Fragment>
+            {index > 0 ? <Divider /> : null} */
+    <EntriesList entriesList={entriesList} />
+    /*  </Fragment>
         ))}
       </div>
-    </section>
+    </section> */
   );
 }

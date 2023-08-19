@@ -7,9 +7,6 @@ export default function App({ Component, pageProps }) {
   const [entriesList, setEntriesList] = useState(initialEntries);
 
   function handleAddEntry(newEntry) {
-    const date = new Date().toLocaleDateString("en-us", {
-      dateStyle: "medium",
-    });
     setEntriesList([newEntry, ...entriesList]);
   }
 

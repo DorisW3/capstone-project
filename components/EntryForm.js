@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { uid } from "uid";
 
-export default function EntryForm({ onAddEntry }) {
+export default function EntryForm({ onAddEntry, title, comment }) {
   function handleSubmitEntry(event) {
     event.preventDefault();
 
