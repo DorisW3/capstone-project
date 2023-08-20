@@ -1,20 +1,40 @@
+import { Divider } from "@mui/material";
+import { Fragment } from "react";
+import styled from "styled-components";
+
 export function EntriesList({ entriesList }) {
   return (
     <>
-      {entriesList.map((entry) => (
-        <section className="entries__section-entry" key={entry.id}>
-          <time className="entry-date">{entry.date}</time>
-          <div className="entry__content">
-            <div className="entry-title__container">
-              <h2 className="entry-title">
-                <q>{entry.title}</q>
-              </h2>
-            </div>
-
-            <p className="entry-comment">{entry.comment}</p>
-          </div>
-        </section>
+      {entriesList.map((entry, index) => (
+        <StyledSection key={entry.id}>
+          {index > 0 ? <Divider /> : null}
+          <StyledDiv key={entry.id}>
+            <time>{entry.date}</time>
+            <h2>{entry.title}</h2>
+            <p>{entry.comment}</p>
+          </StyledDiv>
+        </StyledSection>
       ))}
     </>
   );
 }
+
+const StyledSection = styled.section`
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 85%;
+  gap: 1rem;
+`;
+
+const StyledDiv = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+`;
+
+const StyledTime = styled.time``;
+
+const Styled = styled.div``;
