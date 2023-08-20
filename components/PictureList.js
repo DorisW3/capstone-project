@@ -2,6 +2,7 @@
 import { styled } from "styled-components";
 import pictures from "../db.js";
 import StyledImage from "./StyledImage.js";
+import Link from "next/link.js";
 
 export default function PictureList() {
   return (
@@ -10,14 +11,15 @@ export default function PictureList() {
         .filter((picture) => picture.username === "dolorisi")
         .map((picture) => (
           <StyledListItem key={picture.id}>
-            <StyledImage
-              src={picture.image}
-              alt={picture.theme}
-              height={300}
-              width={200}
-              priority={true} // bei Bildern mit großer Datenmenge, verbessert der Code das laden
-            />
-
+            <Link href="/detailscomments">
+              <StyledImage
+                src={picture.image}
+                alt={picture.theme}
+                height={300}
+                width={200}
+                priority={true} // bei Bildern mit großer Datenmenge, verbessert der Code das laden
+              />
+            </Link>
             <StyledTheme>{picture.theme}</StyledTheme>
           </StyledListItem>
         ))}
