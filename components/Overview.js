@@ -8,7 +8,7 @@ export default function Overview() {
   return (
     <ul>
       {pictures.map((picture) => (
-        <StyledListItem key={picture.id} className="image-styling__container">
+        <StyledListItem key={picture.id}>
           <Link href="/detailscomments">
             <StyledImage
               src={picture.image}

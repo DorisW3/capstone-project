@@ -12,7 +12,7 @@ export default function DetailsComments({
 }) {
   return (
     <>
-      <h1>Detail Page</h1>
+      <h1>Details Page</h1>
       <main>
         <PictureDetails />
         <EntryForm onAddEntry={handleAddEntry} />
