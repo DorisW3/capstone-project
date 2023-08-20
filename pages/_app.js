@@ -3,6 +3,7 @@ import GlobalStyle from "../styles";
 import Layout from "@/components/Layout";
 import initialEntries from "@/commentsdb";
 import useLocalStorageState from "use-local-storage-state";
+import styled from "styled-components";
 
 export default function App({ Component, pageProps }) {
   const [entriesList, setEntriesList] = useLocalStorageState("initialEntries", {
@@ -17,6 +18,7 @@ export default function App({ Component, pageProps }) {
     <>
       <GlobalStyle />
       <Layout>
+        <StyledAppName>Art Connect</StyledAppName>
         <Component
           {...pageProps}
           handleAddEntry={handleAddEntry}
@@ -26,3 +28,10 @@ export default function App({ Component, pageProps }) {
     </>
   );
 }
+
+const StyledAppName = styled.h1`
+  color: slateblue;
+  border-bottom: 2px solid slategray;
+  margin-bottom: 1rem;
+  padding-bottom: 2rem;
+`;
