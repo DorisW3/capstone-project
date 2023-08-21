@@ -9,7 +9,7 @@ export default function Overview() {
     <ul>
       {pictures.map((picture) => (
         <StyledListItem key={picture.id}>
-          <Link href="/detailscomments">
+          <Link href={`/detailscomments/${picture.id}`}>
             <StyledImage
               src={picture.image}
               alt={picture.theme}

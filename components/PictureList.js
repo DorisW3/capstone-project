@@ -11,7 +11,7 @@ export default function PictureList() {
         .filter((picture) => picture.username === "dolorisi")
         .map((picture) => (
           <StyledListItem key={picture.id}>
-            <Link href="/detailscomments">
+            <Link href={`/detailscomments/${picture.id}`}>
               <StyledImage
                 src={picture.image}
                 alt={picture.theme}

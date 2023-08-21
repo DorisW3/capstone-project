@@ -1,5 +1,4 @@
 import { Divider } from "@mui/material";
-import { Fragment } from "react";
 import styled from "styled-components";
 
 export function EntriesList({ entriesList }) {
@@ -34,7 +33,3 @@ const StyledDiv = styled.div`
   margin-top: 1rem;
   margin-bottom: 2rem;
 `;
-
-const StyledTime = styled.time``;
-
-const Styled = styled.div``;

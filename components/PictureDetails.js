@@ -5,20 +5,16 @@ import { useRouter } from "next/router";
 
 export default function PictureDetails() {
   const router = useRouter();
-  const { id } = router.query;
+  const routerId = router.query.index;
 
-  const selectedPicture = pictures.find(
-    ({ slug }) => slug === router.query.slug
-  );
-
-  console.log(selectedPicture);
+  const selectedPicture = pictures.find((picture) => picture.id == routerId);
 
   if (!selectedPicture) {
     return <p>Loading...</p>;
   }
 
   return (
-    <StyledArcticle key={pictures.id}>
+    <StyledArcticle key={selectedPicture.id}>
       <StyledImage
         src={selectedPicture.image}
         alt={selectedPicture.theme}
