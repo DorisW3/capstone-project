@@ -5,9 +5,9 @@ import { useRouter } from "next/router";
 
 export default function PictureDetails() {
   const router = useRouter();
-  const routerId = router.query.index;
+  const routerId = router.query.index; //  gibt IMMER eine String zurück!!!!
 
-  const selectedPicture = pictures.find((picture) => picture.id == routerId);
+  const selectedPicture = pictures.find((picture) => picture.id === routerId);
 
   if (!selectedPicture) {
     return <p>Loading...</p>;
