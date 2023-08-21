@@ -10,7 +10,7 @@ export function EntriesList({ entriesList }) {
           <StyledDiv key={entry.id}>
             <time>{entry.date}</time>
             <h2>{entry.title}</h2>
-            <p>{entry.comment}</p>
+            <StyledEntry>{entry.comment}</StyledEntry>
           </StyledDiv>
         </StyledSection>
       ))}
@@ -32,4 +32,8 @@ const StyledDiv = styled.div`
   align-items: flex-start;
   margin-top: 1rem;
   margin-bottom: 2rem;
+`;
+
+const StyledEntry = styled.p`
+  word-break: break-word;
 `;
