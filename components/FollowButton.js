@@ -3,13 +3,14 @@ import { styled } from "styled-components";
 
 export default function FollowButton() {
   const [follow, setFollow] = useState(false);
-  function handleToggle() {
-    setFollow(!follow);
-  }
 
   return (
-    <StyledButton type="submit" onClick={handleToggle}>
-      follow
+    <StyledButton
+      onClick={() => {
+        setFollow(!follow);
+      }}
+    >
+      {follow ? "unfollow" : "follow"}
     </StyledButton>
   );
 }
