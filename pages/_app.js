@@ -6,12 +6,21 @@ import useLocalStorageState from "use-local-storage-state";
 import styled from "styled-components";
 
 export default function App({ Component, pageProps }) {
+  // ----- initial entires werden ge-updatet -> new entries können hinzugefügt werden
   const [entriesList, setEntriesList] = useLocalStorageState("initialEntries", {
     defaultValue: initialEntries,
   });
 
   function handleAddEntry(newEntry) {
     setEntriesList([newEntry, ...entriesList]);
+  }
+  // -----
+
+  // ----- favorite button
+  const [isFavorite, setIsFavorite] = useState([]);
+
+  function handleToggle() {
+    setIsFavorite(!isFavorite);
   }
 
   return (
@@ -23,6 +32,7 @@ export default function App({ Component, pageProps }) {
           {...pageProps}
           handleAddEntry={handleAddEntry}
           entriesList={entriesList}
+          handleToggle={handleToggle}
         />
       </Layout>
     </>

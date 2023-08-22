@@ -3,8 +3,9 @@ import { styled } from "styled-components";
 import pictures from "../db.js";
 import StyledImage from "./StyledImage.js";
 import Link from "next/link.js";
+import FavoriteButton from "./Buttons.js";
 
-export default function PictureList() {
+export default function PictureList({ handleToggle, isFavorite }) {
   return (
     <ul>
       {pictures
@@ -12,6 +13,10 @@ export default function PictureList() {
         .map((picture) => (
           <StyledListItem key={picture.id}>
             <Link href={`/detailscomments/${picture.id}`}>
+              <FavoriteButton
+                handleToggle={handleToggle}
+                isFavorite={isFavorite}
+              />
               <StyledImage
                 src={picture.image}
                 alt={picture.theme}
