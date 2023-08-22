@@ -12,11 +12,11 @@ export default function PictureList({ handleToggle, isFavorite }) {
         .filter((picture) => picture.username === "dolorisi")
         .map((picture) => (
           <StyledListItem key={picture.id}>
+            <FavoriteButton
+              handleToggle={handleToggle}
+              isFavorite={isFavorite}
+            />
             <Link href={`/detailscomments/${picture.id}`}>
-              <FavoriteButton
-                handleToggle={handleToggle}
-                isFavorite={isFavorite}
-              />
               <StyledImage
                 src={picture.image}
                 alt={picture.theme}

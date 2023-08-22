@@ -17,11 +17,6 @@ export default function App({ Component, pageProps }) {
   // -----
 
   // ----- favorite button
-  const [filledHeart, setFilledHeart] = useState(false);
-
-  function handleToggle() {
-    setFilledHeart(!filledHeart);
-  }
 
   return (
     <>
@@ -32,9 +27,6 @@ export default function App({ Component, pageProps }) {
           {...pageProps}
           handleAddEntry={handleAddEntry}
           entriesList={entriesList}
-          handleToggle={handleToggle}
-          filledHeart={filledHeart}
-          setFilledHeart={setFilledHeart}
         />
       </Layout>
     </>

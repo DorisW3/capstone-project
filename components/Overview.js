@@ -4,22 +4,21 @@ import pictures from "../db.js";
 import StyledImage from "./StyledImage.js";
 import Link from "next/link";
 import FavoriteButton from "./Buttons.js";
+import { useState } from "react";
 
-export default function Overview({
-  setFilledHeart,
-  filledHeart,
-  handleToggle,
-}) {
+export default function Overview() {
+  // const [filledHeart, setFilledHeart] = useState(false);
+
+  /* function handleToggle() {
+    setFilledHeart(!filledHeart);
+  } */
+
   return (
     <ul>
       {pictures.map((picture) => (
         <StyledListItem key={picture.id}>
+          <FavoriteButton />
           <Link href={`/detailscomments/${picture.id}`}>
-            <FavoriteButton
-              setFilledHeart={setFilledHeart}
-              filledHeart={filledHeart}
-              handleToggle={handleToggle}
-            />
             <StyledImage
               src={picture.image}
               alt={picture.theme}
