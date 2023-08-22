@@ -5,15 +5,20 @@ import StyledImage from "./StyledImage.js";
 import Link from "next/link";
 import FavoriteButton from "./Buttons.js";
 
-export default function Overview({ handleToggle, isFavorite }) {
+export default function Overview({
+  setFilledHeart,
+  filledHeart,
+  handleToggle,
+}) {
   return (
     <ul>
       {pictures.map((picture) => (
         <StyledListItem key={picture.id}>
           <Link href={`/detailscomments/${picture.id}`}>
             <FavoriteButton
+              setFilledHeart={setFilledHeart}
+              filledHeart={filledHeart}
               handleToggle={handleToggle}
-              isFavorite={isFavorite}
             />
             <StyledImage
               src={picture.image}
