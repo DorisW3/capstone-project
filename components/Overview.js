@@ -3,8 +3,9 @@ import { styled } from "styled-components";
 import pictures from "../db.js";
 import StyledImage from "./StyledImage.js";
 import Link from "next/link";
-import FavoriteButton from "./Buttons.js";
+import FavoriteButton from "./FavoriteButton.js";
 import { useState } from "react";
+import FollowButton from "./FollowButton.js";
 
 export default function Overview() {
   // const [filledHeart, setFilledHeart] = useState(false);
@@ -27,17 +28,27 @@ export default function Overview() {
               priority={true} // bei Bildern mit großer Datenmenge, verbessert der Code das laden
             />
           </Link>
-          <StyledTheme>{picture.username}</StyledTheme>
+          <StyledContainer>
+            <StyledUserName>{picture.username}</StyledUserName>
+            <FollowButton />
+          </StyledContainer>
         </StyledListItem>
       ))}
     </ul>
   );
 }
 
-const StyledTheme = styled.h2`
+const StyledContainer = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+`;
+
+const StyledUserName = styled.h2`
   text-align: center;
   font-size: 1.2rem;
   margin-bottom: 3rem;
+  margin-top: 1rem;
 `;
 
 const StyledListItem = styled.li`

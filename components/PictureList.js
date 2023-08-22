@@ -3,7 +3,7 @@ import { styled } from "styled-components";
 import pictures from "../db.js";
 import StyledImage from "./StyledImage.js";
 import Link from "next/link.js";
-import FavoriteButton from "./Buttons.js";
+import FavoriteButton from "./FavoriteButton.js";
 
 export default function PictureList({ handleToggle, isFavorite }) {
   return (
