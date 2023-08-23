@@ -13,7 +13,6 @@ export default function PictureDetails() {
   if (!selectedPicture) {
     return <p>Loading...</p>;
   }
-  // -----
 
   return (
     <StyledArcticle key={selectedPicture.id}>
