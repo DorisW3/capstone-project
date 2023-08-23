@@ -7,7 +7,7 @@ export default function FollowButton() {
   return (
     <StyledButton
       onClick={() => {
-        setFollow(!follow);
+        setIsFollowing(!isFollowing);
       }}
     >
       {follow ? "unfollow" : "follow"}
