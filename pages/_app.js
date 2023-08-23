@@ -14,9 +14,6 @@ export default function App({ Component, pageProps }) {
   function handleAddEntry(newEntry) {
     setEntriesList([newEntry, ...entriesList]);
   }
-  // -----
-
-  // ----- favorite button
 
   return (
     <>

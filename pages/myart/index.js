@@ -2,12 +2,16 @@ import { styled } from "styled-components";
 import PictureList from "../../components/PictureList";
 import pictures from "../../db.js";
 
-export default function MyArt() {
+export default function MyArt({ handleToggle, isFavorite }) {
   return (
     <>
       <Heading>My Art</Heading>
       <StyledMain>
-        <PictureList pictures={pictures} />
+        <PictureList
+          pictures={pictures}
+          handleToggle={handleToggle}
+          isFavorite={isFavorite}
+        />
       </StyledMain>
     </>
   );
