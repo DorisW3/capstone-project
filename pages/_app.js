@@ -6,6 +6,7 @@ import useLocalStorageState from "use-local-storage-state";
 import styled from "styled-components";
 
 export default function App({ Component, pageProps }) {
+  // ----- initial entires werden ge-updatet -> new entries können hinzugefügt werden
   const [entriesList, setEntriesList] = useLocalStorageState("initialEntries", {
     defaultValue: initialEntries,
   });
