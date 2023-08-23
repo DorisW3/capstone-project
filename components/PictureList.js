@@ -14,7 +14,7 @@ export default function PictureList({ handleToggle, isFavorite }) {
       {pictures.map((picture) => (
         <StyledListItem key={picture.id}>
           <FavoriteButton handleToggle={handleToggle} isFavorite={isFavorite} />
-          <Link href={`/detailscomments/${picture.id}`}>
+          <Link href={`/details/${picture.id}`}>
             <StyledImage
               src={picture.image}
               alt={picture.theme}

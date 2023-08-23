@@ -1,21 +1,24 @@
+import pictures from "@/db";
 import { Divider } from "@mui/material";
 import styled from "styled-components";
 
 export function EntriesList({ entriesList }) {
-  return (
-    <>
-      {entriesList.map((entry, index) => (
-        <StyledSection key={entry.id}>
-          {index > 0 ? <Divider /> : null}
-          <StyledDiv key={entry.id}>
-            <time>{entry.date}</time>
-            <h2>{entry.title}</h2>
-            <StyledEntry>{entry.comment}</StyledEntry>
-          </StyledDiv>
-        </StyledSection>
-      ))}
-    </>
-  );
+  /* const pictureWithInitialEntires = pictures.filter(
+    (picture) => picture.id === 1
+  ); */
+  //in const commentsForSelectedArt = entriesList.filter nach den einträgen des gewählten bildes über die id conitional rendering
+  <>
+    {entriesList.map((entry, index) => (
+      <StyledSection key={entry.id}>
+        {index > 0 ? <Divider /> : null}
+        <StyledDiv>
+          <time>{entry.date}</time>
+          <h2>{entry.title}</h2>
+          <StyledEntry>{entry.comment}</StyledEntry>
+        </StyledDiv>
+      </StyledSection>
+    ))}
+  </>;
 }
 
 const StyledSection = styled.section`

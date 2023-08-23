@@ -22,7 +22,7 @@ export default function Overview() {
       {shuffledPictures.map((picture) => (
         <StyledListItem key={picture.id}>
           <FavoriteButton />
-          <Link href={`/detailscomments/${picture.id}`}>
+          <Link href={`/details/${picture.id}`}>
             <StyledImage
               src={picture.image}
               alt={picture.theme}

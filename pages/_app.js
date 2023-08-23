@@ -1,4 +1,3 @@
-import { useState } from "react";
 import GlobalStyle from "../styles";
 import Layout from "@/components/Layout";
 import initialEntries from "@/commentsdb";
@@ -9,9 +8,7 @@ import pictures from "@/db";
 export default function App({ Component, pageProps }) {
   // ----- initial entires werden ge-updatet -> new entries können hinzugefügt werden
   const [entriesList, setEntriesList] = useLocalStorageState("initialEntries", {
-    defaultValue: initialEntries
-      ? initialEntries.index
-      : "There are no entries yet!",
+    defaultValue: initialEntries,
   });
 
   function handleAddEntry(newEntry) {
@@ -40,3 +37,9 @@ const StyledAppName = styled.h1`
   margin-bottom: 1rem;
   padding-bottom: 2rem;
 `;
+
+/*pictureWithInitialEntires === routerId
+const pictureWithInitialEntires = pictures.filter(
+    (picture) => picture.id === 1
+  );
+*/
