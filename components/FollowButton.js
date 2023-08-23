@@ -10,7 +10,7 @@ export default function FollowButton() {
         setIsFollowing(!isFollowing);
       }}
     >
-      {follow ? "unfollow" : "follow"}
+      {isFollowing ? "unfollow" : "follow"}
     </StyledButton>
   );
 }
