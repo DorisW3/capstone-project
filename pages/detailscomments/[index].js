@@ -5,11 +5,7 @@ import initialEntries from "@/commentsdb";
 import { uid } from "uid";
 import PictureDetails from "@/components/PictureDetails";
 
-export default function DetailsComments({
-  onSubmit,
-  entriesList,
-  handleAddEntry,
-}) {
+export default function DetailsComments({ entriesList, handleAddEntry }) {
   return (
     <>
       <h1>Details Page</h1>

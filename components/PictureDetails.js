@@ -30,7 +30,7 @@ export default function PictureDetails() {
   );
 }
 
-const StyledArcticle = styled.div`
+const StyledArcticle = styled.article`
   display: flex;
   flex-direction: column;
   align-items: center;

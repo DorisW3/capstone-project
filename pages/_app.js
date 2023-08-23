@@ -4,11 +4,14 @@ import Layout from "@/components/Layout";
 import initialEntries from "@/commentsdb";
 import useLocalStorageState from "use-local-storage-state";
 import styled from "styled-components";
+import pictures from "@/db";
 
 export default function App({ Component, pageProps }) {
   // ----- initial entires werden ge-updatet -> new entries können hinzugefügt werden
   const [entriesList, setEntriesList] = useLocalStorageState("initialEntries", {
-    defaultValue: initialEntries,
+    defaultValue: initialEntries
+      ? initialEntries.index
+      : "There are no entries yet!",
   });
 
   function handleAddEntry(newEntry) {
@@ -24,6 +27,7 @@ export default function App({ Component, pageProps }) {
           {...pageProps}
           handleAddEntry={handleAddEntry}
           entriesList={entriesList}
+          pictures={pictures}
         />
       </Layout>
     </>
