@@ -2,15 +2,15 @@ import { useState } from "react";
 import { styled } from "styled-components";
 
 export default function FollowButton() {
-  const [isFollow, setIsFollow] = useState(false);
+  const [isFollowing, setIsFollowing] = useState(false);
 
   return (
     <StyledButton
       onClick={() => {
-        setIsFollow(!isFollow);
+        setIsFollowing(!isFollowing);
       }}
     >
-      {isFollow ? "unfollow" : "follow"}
+      {isFollowing ? "unfollow" : "follow"}
     </StyledButton>
   );
 }
