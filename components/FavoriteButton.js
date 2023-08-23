@@ -1,7 +1,7 @@
 import { styled } from "styled-components";
 import { useState } from "react";
 
-export default function FavoriteButton({}) {
+export default function FavoriteButton({isFavourite, handleToggle}) {
   const [isFavorite, setIsFavorite] = useState(false);
   function handleToggle() {
     setIsFavorite(!isFavorite);
