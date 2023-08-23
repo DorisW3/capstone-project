@@ -8,12 +8,6 @@ import { useState } from "react";
 import FollowButton from "./FollowButton.js";
 
 export default function Overview() {
-  // const [filledHeart, setFilledHeart] = useState(false);
-
-  /* function handleToggle() {
-    setFilledHeart(!filledHeart);
-  } */
-
   return (
     <ul>
       {pictures.map((picture) => (
