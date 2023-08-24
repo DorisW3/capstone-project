@@ -1,12 +1,14 @@
 const initialEntries = [
   {
     id: "1",
+    picid: "1",
     date: "10 Aug 2023",
     title: "nice artwork",
     comment: "Which brushes did you use? ",
   },
   {
     id: "2",
+    picid: "1",
     date: "01 Aug 2023",
     title: "fantastic collage",
     comment:
@@ -14,6 +16,7 @@ const initialEntries = [
   },
   {
     id: "3",
+    picid: "1",
     date: "18 Jul 2023",
     title: "lovely collage theme",
     comment:
@@ -21,6 +24,7 @@ const initialEntries = [
   },
   {
     id: "4",
+    picid: "1",
     date: "05 Jul 2023",
     title: "I loooooove Alice in Wonderland",
     comment:

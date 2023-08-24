@@ -4,16 +4,25 @@ import pictures from "../db.js";
 import StyledImage from "./StyledImage.js";
 import Link from "next/link";
 import FavoriteButton from "./FavoriteButton.js";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import FollowButton from "./FollowButton.js";
 
 export default function Overview() {
+  const [shuffledPictures, setShuffledPictures] = useState([]);
+
+  // the code within the useEffect I research on the internet
+  useEffect(() => {
+    // mischt die Reihenfolge der Bilder zufällig
+    const shuffled = [...pictures].sort(() => Math.random() - 0.5);
+    setShuffledPictures(shuffled);
+  }, []);
+
   return (
     <ul>
-      {pictures.map((picture) => (
+      {shuffledPictures.map((picture) => (
         <StyledListItem key={picture.id}>
           <FavoriteButton />
-          <Link href={`/detailscomments/${picture.id}`}>
+          <Link href={`/details/${picture.id}`}>
             <StyledImage
               src={picture.image}
               alt={picture.theme}

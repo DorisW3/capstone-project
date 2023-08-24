@@ -2,8 +2,8 @@ const pictures = [
   {
     id: "1",
     image: "/AliceInWonderland.png",
-    theme: "Alice in wonderland",
-    description: 'A collage with some characters of "alice in wonderland" ',
+    theme: "Alice in Wonderland",
+    description: 'A collage with some characters of "Alice in Wonderland" ',
     username: "dolorisi",
   },
   {
@@ -40,14 +40,14 @@ const pictures = [
     id: "6",
     image: "/InfinityPool.png",
     theme: "Infinity Pool",
-    description: "Painting of an infinity pool painted with procreate",
+    description: "Painting of an infinity pool painted in procreate",
     username: "cassja",
   },
   {
     id: "7",
     image: "/NorbertDerUnzufriedeneFisch.png",
     theme: "Norbert, der unzufriedene Fisch",
-    description: 'Painting of a fish named "Norbert" painted with procreate',
+    description: 'Painting of a fish named "Norbert" painted in procreate',
     username: "cassja",
   },
   {
@@ -55,7 +55,7 @@ const pictures = [
     image: "/WüstenHans.png",
     theme: 'Call me "Wüsten Hans", the cactus!',
     description:
-      "Painting of a cactus named 'Wüsten Hans' painted with procreate",
+      "Painting of a cactus named 'Wüsten Hans' painted in procreate",
     username: "cassja",
   },
 ];

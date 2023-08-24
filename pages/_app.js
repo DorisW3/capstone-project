@@ -1,9 +1,9 @@
-import { useState } from "react";
 import GlobalStyle from "../styles";
 import Layout from "@/components/Layout";
 import initialEntries from "@/commentsdb";
 import useLocalStorageState from "use-local-storage-state";
 import styled from "styled-components";
+import pictures from "@/db";
 
 export default function App({ Component, pageProps }) {
   // ----- initial entires werden ge-updatet -> new entries können hinzugefügt werden
@@ -24,6 +24,7 @@ export default function App({ Component, pageProps }) {
           {...pageProps}
           handleAddEntry={handleAddEntry}
           entriesList={entriesList}
+          pictures={pictures}
         />
       </Layout>
     </>
@@ -36,3 +37,5 @@ const StyledAppName = styled.h1`
   margin-bottom: 1rem;
   padding-bottom: 2rem;
 `;
+
+
