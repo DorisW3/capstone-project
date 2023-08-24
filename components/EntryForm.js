@@ -1,7 +1,7 @@
 import { uid } from "uid";
 import styled from "styled-components";
 
-export default function EntryForm({ onAddEntry }) {
+export default function EntryForm({ onAddEntry, routerId }) {
   function handleSubmitEntry(event) {
     event.preventDefault();
 
@@ -14,6 +14,7 @@ export default function EntryForm({ onAddEntry }) {
 
     const newEntry = {
       id: uid(),
+      picid: routerId,
       date: date,
       title: data.title,
       comment: data.comment,

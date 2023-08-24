@@ -1,24 +1,38 @@
 import pictures from "@/db";
 import { Divider } from "@mui/material";
 import styled from "styled-components";
+import initialEntries from "@/commentsdb";
 
-export function EntriesList({ entriesList }) {
-  /* const pictureWithInitialEntires = pictures.filter(
-    (picture) => picture.id === 1
-  ); */
-  //in const commentsForSelectedArt = entriesList.filter nach den einträgen des gewählten bildes über die id conitional rendering
-  <>
-    {entriesList.map((entry, index) => (
-      <StyledSection key={entry.id}>
-        {index > 0 ? <Divider /> : null}
-        <StyledDiv>
-          <time>{entry.date}</time>
-          <h2>{entry.title}</h2>
-          <StyledEntry>{entry.comment}</StyledEntry>
-        </StyledDiv>
-      </StyledSection>
-    ))}
-  </>;
+export function EntriesList({ entriesList, routerId }) {
+  // const selectedPicture = pictures.find((picture) => picture.id === routerId);
+
+  const pictureWithInitialEntires = entriesList.filter(
+    (initialEntries) => initialEntries.picid === routerId
+  );
+
+  if (pictureWithInitialEntires.length === 0) {
+    return <p>There are no comments yet!</p>;
+  } else {
+    //in const commentsForSelectedArt = entriesList.filter nach den einträgen des gewählten bildes über die id conitional rendering
+    /* console.log(initialEntries);
+  console.log(pictureWithInitialEntires);
+  console.log(routerId) */
+
+    return (
+      <>
+        {pictureWithInitialEntires.map((entry, index) => (
+          <StyledSection key={entry.id}>
+            {index > 0 ? <Divider /> : null}
+            <StyledDiv>
+              <time>{entry.date}</time>
+              <h2>{entry.title}</h2>
+              <StyledEntry>{entry.comment}</StyledEntry>
+            </StyledDiv>
+          </StyledSection>
+        ))}
+      </>
+    );
+  }
 }
 
 const StyledSection = styled.section`

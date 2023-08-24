@@ -15,7 +15,7 @@ export default function PictureDetails({ selectedPicture }) {
         alt={selectedPicture.theme}
         height={300}
         width={200}
-        priority={true} // bei Bildern mit großer Datenmenge, verbessert der Code das laden
+        priority={true} // bei Bildern mit großer Datenmenge, verbessert der Code das Laden
       />
       <p>{selectedPicture.theme}</p>
       <p>{selectedPicture.description}</p>
