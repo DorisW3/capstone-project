@@ -4,7 +4,6 @@ import styled from "styled-components";
 import initialEntries from "@/commentsdb";
 
 export function EntriesList({ entriesList, routerId }) {
-  // const selectedPicture = pictures.find((picture) => picture.id === routerId);
 
   const pictureWithInitialEntires = entriesList.filter(
     (initialEntries) => initialEntries.picid === routerId
@@ -13,10 +12,6 @@ export function EntriesList({ entriesList, routerId }) {
   if (pictureWithInitialEntires.length === 0) {
     return <p>There are no comments yet!</p>;
   } else {
-    //in const commentsForSelectedArt = entriesList.filter nach den einträgen des gewählten bildes über die id conitional rendering
-    /* console.log(initialEntries);
-  console.log(pictureWithInitialEntires);
-  console.log(routerId) */
 
     return (
       <>

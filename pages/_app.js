@@ -38,8 +38,4 @@ const StyledAppName = styled.h1`
   padding-bottom: 2rem;
 `;
 
-/*pictureWithInitialEntires === routerId
-const pictureWithInitialEntires = pictures.filter(
-    (picture) => picture.id === 1
-  );
-*/
+

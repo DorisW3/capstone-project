@@ -28,4 +28,3 @@ export default function DetailsComments({ entriesList, handleAddEntry }) {
   );
 }
 
-//entriesList={selectedPicture.id === 1 ? entriesList : ["No entires yet!"]}
