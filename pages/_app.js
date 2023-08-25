@@ -16,23 +16,6 @@ export default function App({ Component, pageProps }) {
     setEntriesList([newEntry, ...entriesList]);
   }
 
-  const [isFavoriteArt, setIsFavoriteArt] = useState([]);
-
-  function handleToggleFavorite(slug) {
-    setIsFavoriteArt((isFavoriteArt) => {
-      const favorite = isFavoriteArt.find((favorite) => favorite.slug === slug);
-
-      if (favorite) {
-        return isFavoriteArt.map((favorite) =>
-          favorite.slug === slug
-            ? { ...favorite, isFavorite: !favorite.isFavorite }
-            : favorite
-        );
-      }
-
-      return [...isFavoriteArt, { slug, isFavorite: true }];
-    });
-  }
 
   return (
     <>
@@ -44,8 +27,6 @@ export default function App({ Component, pageProps }) {
           handleAddEntry={handleAddEntry}
           entriesList={entriesList}
           pictures={pictures}
-          isFavoriteArt={isFavoriteArt}
-          setIsFavoriteArt={setIsFavoriteArt}
         />
       </Layout>
     </>

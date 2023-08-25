@@ -2,26 +2,11 @@ import PictureList from "@/components/PictureList";
 import pictures from "@/db";
 import styled from "@emotion/styled";
 
-export default function favorites({ isFavoriteArt, handleToggleFavorite }) {
-  const onlyFavoriteArt = pictures.filter((picture) =>
-    isFavoriteArt.find(
-      (favoriteArt) =>
-        favoriteArt.slug === picture.slug && favoriteArt.isFavorite
-    )
-  );
-
+export default function favorites() {
   return (
     <>
       <Heading>Favorites</Heading>
-      {onlyFavoriteArt.length === 0 ? (
-        "There are no favorites yet!"
-      ) : (
-        <PictureList
-          pictures={onlyFavoriteArt}
-          handleToggleFavorite={handleToggleFavorite}
-          isFavoriteArt={isFavoriteArt}
-        />
-      )}
+      <p>There are no favorites yet!</p>
     </>
   );
 }
