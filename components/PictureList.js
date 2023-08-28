@@ -4,16 +4,16 @@ import StyledImage from "./StyledImage.js";
 import Link from "next/link.js";
 import FavoriteButton from "./FavoriteButton.js";
 
-export default function PictureList({ onToggleFavorite, isFavorite }) {
+export default function PictureList({ onToggleFavorite, images }) {
   return (
     <ul>
-      {pictures
+      {images
         .filter((picture) => picture.username === "dolorisi")
         .map((picture) => (
           <StyledListItem key={picture.id}>
             <FavoriteButton
               onToggleFavorite={() => onToggleFavorite(picture.id)}
-              isFavorite={isFavorite}
+              isFavorite={picture.isFavorite}
             />
             <Link href={`/details/${picture.id}`}>
               <StyledImage

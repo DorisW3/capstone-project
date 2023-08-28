@@ -24,6 +24,7 @@ export default function favorites({ images, onToggleFavorite }) {
                   onToggleFavorite={() => {
                     onToggleFavorite(Favorite.id);
                   }}
+                  isFavorite={Favorite.isFavorite}
                 />
                 <Link href={`/details/${Favorite.id}`}>
                   <StyledImage

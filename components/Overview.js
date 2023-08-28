@@ -7,22 +7,24 @@ import FavoriteButton from "./FavoriteButton.js";
 import { useEffect, useState } from "react";
 import FollowButton from "./FollowButton.js";
 
-export default function Overview({ onToggleFavorite }) {
+export default function Overview({ onToggleFavorite, images }) {
   const [shuffledPictures, setShuffledPictures] = useState([]);
 
   // the code within the useEffect I research on the internet
   useEffect(() => {
     // mischt die Reihenfolge der Bilder zufällig
-    const shuffled = [...pictures].sort(() => Math.random() - 0.5);
+    const shuffled = [...images].sort(() => Math.random() - 0.5);
     setShuffledPictures(shuffled);
-  }, []);
+  }, [images]);
 
+  console.log(shuffledPictures);
   return (
     <ul>
-      {shuffledPictures.map((picture) => (
+      {images.map((picture) => (
         <StyledListItem key={picture.id}>
           <FavoriteButton
             onToggleFavorite={() => onToggleFavorite(picture.id)}
+            isFavorite={picture.isFavorite}
           />
           <Link href={`/details/${picture.id}`}>
             <StyledImage
