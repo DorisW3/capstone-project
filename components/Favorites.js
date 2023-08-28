@@ -4,25 +4,14 @@ import StyledImage from "./StyledImage";
 import Link from "next/link";
 import styled from "@emotion/styled";
 
-export default function Favorites({
-  onToggleFavorite,
-  isFavorite,
-  id,
-  onFavoriteImages,
-  filter,
-  images
-}) {
+export default function Favorites({ onToggleFavorite, isFavorite }) {
   return (
     <ul>
       {pictures.map((picture) => (
         <StyledListItem key={picture.id}>
           <FavoriteButton
             onToggleFavorite={onToggleFavorite}
-            onFavoriteImages={onFavoriteImages}
             isFavorite={isFavorite}
-            id={id}
-            filter={filter}
-            images={images}
           />
           <Link href={`/details/${picture.id}`}>
             <StyledImage

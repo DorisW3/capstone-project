@@ -3,7 +3,6 @@ import Overview from "@/components/Overview";
 
 export default function Homepage({
   onToggleFavorite,
-  onFavoriteImages,
   isFavorite,
   images,
 }) {
@@ -13,7 +12,6 @@ export default function Homepage({
       <StyledMain>
         <Overview
           onToggleFavorite={onToggleFavorite}
-          onFavoriteImages={onFavoriteImages}
           isFavorite={isFavorite}
           images={images}
         />

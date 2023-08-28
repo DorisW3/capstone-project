@@ -1,12 +1,10 @@
 import { styled } from "styled-components";
 import PictureList from "../../components/PictureList";
 import pictures from "../../db.js";
-import { images } from "@/next.config";
 
 export default function MyArt({
   onToggleFavorite,
   isFavorite,
-  onFavoriteImages,
   images,
 }) {
   return (
@@ -16,7 +14,6 @@ export default function MyArt({
         <PictureList
           pictures={pictures}
           onToggleFavorite={onToggleFavorite}
-          onFavoriteImages={onFavoriteImages}
           isFavorite={isFavorite}
           images={images}
         />

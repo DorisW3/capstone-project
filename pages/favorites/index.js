@@ -1,14 +1,11 @@
 import FavoriteButton from "@/components/FavoriteButton";
 import FollowButton from "@/components/FollowButton";
-import Overview from "@/components/Overview";
 import StyledImage from "@/components/StyledImage";
 import styled from "@emotion/styled";
 import Link from "next/link";
 
 export default function favorites({ images, onToggleFavorite }) {
   const Favorites = images.filter((image) => image.isFavorite);
-  console.log(images, "images");
-  console.log(Favorites, "filter");
 
   return (
     <>

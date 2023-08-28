@@ -17,15 +17,6 @@ export default function App({ Component, pageProps }) {
   }
 
   const [images, setImages] = useState(pictures);
-  const [filter, setFilter] = useState();
-  /* 
-  function handleFavoriteImages() {
-    setFilter("favorites");
-    //console.log(filter);
-  } */
-
-  /* const favoriteImages = images.filter((image) => image.isFavorite === true);
-  console.log(favoriteImages, "fav"); */
 
   function handleToggleFavorite(id) {
     setImages(
@@ -33,16 +24,7 @@ export default function App({ Component, pageProps }) {
         image.id === id ? { ...image, isFavorite: !image.isFavorite } : image
       )
     );
-    /* const test = pictures.map((picture) =>
-      picture.id === "1"
-        ? { ...picture, isFavorite: !picture.isFavorite }
-        : picture
-    );
-    console.log(test); */
   }
-
-  console.log(images);
-  console.log(filter);
 
   return (
     <>
@@ -54,7 +36,6 @@ export default function App({ Component, pageProps }) {
           handleAddEntry={handleAddEntry}
           entriesList={entriesList}
           onToggleFavorite={handleToggleFavorite}
-          filter={filter}
           images={images}
         />
       </Layout>

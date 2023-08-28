@@ -1,6 +1,4 @@
-import Image from "next/image.js";
 import { styled } from "styled-components";
-import pictures from "../db.js";
 import StyledImage from "./StyledImage.js";
 import Link from "next/link";
 import FavoriteButton from "./FavoriteButton.js";
@@ -17,7 +15,6 @@ export default function Overview({ onToggleFavorite, images }) {
     setShuffledPictures(shuffled);
   }, [images]);
 
-  console.log(shuffledPictures);
   return (
     <ul>
       {images.map((picture) => (

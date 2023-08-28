@@ -1,10 +1,7 @@
-import pictures from "@/db";
 import { Divider } from "@mui/material";
 import styled from "styled-components";
-import initialEntries from "@/commentsdb";
 
 export function EntriesList({ entriesList, routerId }) {
-
   const pictureWithInitialEntires = entriesList.filter(
     (initialEntries) => initialEntries.picid === routerId
   );
@@ -12,7 +9,6 @@ export function EntriesList({ entriesList, routerId }) {
   if (pictureWithInitialEntires.length === 0) {
     return <p>There are no comments yet!</p>;
   } else {
-
     return (
       <>
         {pictureWithInitialEntires.map((entry, index) => (

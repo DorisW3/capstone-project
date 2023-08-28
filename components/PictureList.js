@@ -1,5 +1,4 @@
 import { styled } from "styled-components";
-import pictures from "../db.js";
 import StyledImage from "./StyledImage.js";
 import Link from "next/link.js";
 import FavoriteButton from "./FavoriteButton.js";
