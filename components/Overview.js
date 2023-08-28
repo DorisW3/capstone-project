@@ -21,7 +21,9 @@ export default function Overview({ onToggleFavorite }) {
     <ul>
       {shuffledPictures.map((picture) => (
         <StyledListItem key={picture.id}>
-          <FavoriteButton onToggleFavorite={onToggleFavorite} />
+          <FavoriteButton
+            onToggleFavorite={() => onToggleFavorite(picture.id)}
+          />
           <Link href={`/details/${picture.id}`}>
             <StyledImage
               src={picture.image}

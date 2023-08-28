@@ -27,12 +27,10 @@ export default function App({ Component, pageProps }) {
   /* const favoriteImages = images.filter((image) => image.isFavorite === true);
   console.log(favoriteImages, "fav"); */
 
-  function handleToggleFavorite() {
+  function handleToggleFavorite(id) {
     setImages(
-      pictures.map((picture) =>
-        picture.id === "1"
-          ? { ...picture, isFavorite: !picture.isFavorite }
-          : picture
+      images.map((image) =>
+        image.id === id ? { ...image, isFavorite: !image.isFavorite } : image
       )
     );
     /* const test = pictures.map((picture) =>
