@@ -1,5 +1,6 @@
 const pictures = [
   {
+    isFavorite: false,
     id: "1",
     image: "/AliceInWonderland.png",
     theme: "Alice in Wonderland",
@@ -7,6 +8,7 @@ const pictures = [
     username: "dolorisi",
   },
   {
+    isFavorite: false,
     id: "2",
     image: "/Apple.png",
     theme: "Apple",
@@ -14,6 +16,7 @@ const pictures = [
     username: "dolorisi",
   },
   {
+    isFavorite: false,
     id: "3",
     image: "/Segelboote.png",
     theme: "Sailboats on the sea",
@@ -22,6 +25,7 @@ const pictures = [
   },
   {
     id: "4",
+    isFavorite: false,
     image: "/Wickie.png",
     theme: "Wickie und die starken Männer",
     description:
@@ -30,6 +34,7 @@ const pictures = [
   },
   {
     id: "5",
+    isFavorite: false,
     image: "/ZwergBuchlinge.png",
     theme: "Die Stadt der Träumenden Bücher",
     description:
@@ -37,6 +42,7 @@ const pictures = [
     username: "dolorisi",
   },
   {
+    isFavorite: false,
     id: "6",
     image: "/InfinityPool.png",
     theme: "Infinity Pool",
@@ -44,6 +50,7 @@ const pictures = [
     username: "cassja",
   },
   {
+    isFavorite: false,
     id: "7",
     image: "/NorbertDerUnzufriedeneFisch.png",
     theme: "Norbert, der unzufriedene Fisch",
@@ -52,6 +59,7 @@ const pictures = [
   },
   {
     id: "8",
+    isFavorite: false,
     image: "/WüstenHans.png",
     theme: 'Call me "Wüsten Hans", the cactus!',
     description:

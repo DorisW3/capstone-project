@@ -7,7 +7,7 @@ import FavoriteButton from "./FavoriteButton.js";
 import { useEffect, useState } from "react";
 import FollowButton from "./FollowButton.js";
 
-export default function Overview() {
+export default function Overview({ onToggleFavorite }) {
   const [shuffledPictures, setShuffledPictures] = useState([]);
 
   // the code within the useEffect I research on the internet
@@ -21,7 +21,7 @@ export default function Overview() {
     <ul>
       {shuffledPictures.map((picture) => (
         <StyledListItem key={picture.id}>
-          <FavoriteButton />
+          <FavoriteButton onToggleFavorite={onToggleFavorite} />
           <Link href={`/details/${picture.id}`}>
             <StyledImage
               src={picture.image}

@@ -1,14 +1,20 @@
 import { styled } from "styled-components";
 import { useState } from "react";
+import pictures from "@/db";
 
-export default function FavoriteButton() {
-  const [isFavorite, setIsFavorite] = useState(false);
+export default function FavoriteButton({
+  onToggleFavorite,
+  isFavorite,
+  images,
+}) {
+  /*  const [isFavorite, setIsFavorite] = useState(false);
   function handleToggle() {
     setIsFavorite(!isFavorite);
-  }
+  } */
+  const bilder = pictures.filter((picture) => picture.isFavorite === true);
 
   return (
-    <StyledButton type="button" onClick={handleToggle}>
+    <StyledButton type="button" onClick={onToggleFavorite} images={images}>
       <svg
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 24 24"
