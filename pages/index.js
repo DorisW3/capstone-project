@@ -1,12 +1,20 @@
 import { styled } from "styled-components";
 import Overview from "@/components/Overview";
 
-export default function Homepage() {
+export default function Homepage({
+  onToggleFavorite,
+  isFavorite,
+  images,
+}) {
   return (
     <>
       <Heading>Overview</Heading>
       <StyledMain>
-        <Overview />
+        <Overview
+          onToggleFavorite={onToggleFavorite}
+          isFavorite={isFavorite}
+          images={images}
+        />
       </StyledMain>
     </>
   );

@@ -1,31 +1,31 @@
 import { styled } from "styled-components";
-import pictures from "../db.js";
 import StyledImage from "./StyledImage.js";
 import Link from "next/link.js";
 import FavoriteButton from "./FavoriteButton.js";
 
-export default function PictureList({ handleToggle, isFavorite }) {
-  {
-    pictures.filter((picture) => picture.username === "dolorisi");
-  }
-
+export default function PictureList({ onToggleFavorite, images }) {
   return (
     <ul>
-      {pictures.map((picture) => (
-        <StyledListItem key={picture.id}>
-          <FavoriteButton handleToggle={handleToggle} isFavorite={isFavorite} />
-          <Link href={`/details/${picture.id}`}>
-            <StyledImage
-              src={picture.image}
-              alt={picture.theme}
-              height={300}
-              width={200}
-              priority={true} // bei Bildern mit großer Datenmenge, verbessert der Code das laden
+      {images
+        .filter((picture) => picture.username === "dolorisi")
+        .map((picture) => (
+          <StyledListItem key={picture.id}>
+            <FavoriteButton
+              onToggleFavorite={() => onToggleFavorite(picture.id)}
+              isFavorite={picture.isFavorite}
             />
-          </Link>
-          <StyledTheme>{picture.theme}</StyledTheme>
-        </StyledListItem>
-      ))}
+            <Link href={`/details/${picture.id}`}>
+              <StyledImage
+                src={picture.image}
+                alt={picture.theme}
+                height={300}
+                width={200}
+                priority={true} // bei Bildern mit großer Datenmenge, verbessert der Code das laden
+              />
+            </Link>
+            <StyledTheme>{picture.theme}</StyledTheme>
+          </StyledListItem>
+        ))}
     </ul>
   );
 }

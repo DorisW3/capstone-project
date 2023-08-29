@@ -6,6 +6,7 @@ export default function Navbar() {
     <StyledNavigation>
       <StyledLink href={"/"}>Overview</StyledLink>
       <StyledLink href={"/myart"}>My Art</StyledLink>
+      <StyledLink href={"/favorites"}>Favorites</StyledLink>
     </StyledNavigation>
   );
 }

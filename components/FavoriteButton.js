@@ -1,14 +1,8 @@
 import { styled } from "styled-components";
-import { useState } from "react";
 
-export default function FavoriteButton() {
-  const [isFavorite, setIsFavorite] = useState(false);
-  function handleToggle() {
-    setIsFavorite(!isFavorite);
-  }
-
+export default function FavoriteButton({ onToggleFavorite, isFavorite }) {
   return (
-    <StyledButton type="button" onClick={handleToggle}>
+    <StyledButton type="button" onClick={onToggleFavorite}>
       <svg
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 24 24"
