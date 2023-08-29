@@ -1,4 +1,4 @@
-import pictures from "@/db";
+import pictures from "@/lib/db";
 import StyledImage from "./StyledImage";
 import { styled } from "styled-components";
 import { useRouter } from "next/router";

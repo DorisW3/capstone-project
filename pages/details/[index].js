@@ -2,7 +2,7 @@ import EntryForm from "@/components/EntryForm";
 import PictureDetails from "@/components/PictureDetails";
 import { EntriesList } from "@/components/EntriesList";
 import { useRouter } from "next/router";
-import pictures from "@/db";
+import pictures from "@/lib/db";
 
 export default function DetailsComments({ entriesList, handleAddEntry }) {
   const router = useRouter();
@@ -27,4 +27,3 @@ export default function DetailsComments({ entriesList, handleAddEntry }) {
     </>
   );
 }
-

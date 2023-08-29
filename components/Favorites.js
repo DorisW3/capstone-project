@@ -1,4 +1,4 @@
-import pictures from "@/db";
+import pictures from "@/lib/db";
 import FavoriteButton from "./FavoriteButton";
 import StyledImage from "./StyledImage";
 import Link from "next/link";
