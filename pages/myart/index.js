@@ -47,9 +47,6 @@ const StyledMain = styled.main`
   }
 `;
 
-const Main = styled.main`
-  text-align: center;
-`;
 const StyledUpload = styled.div`
   width: 100%;
   border: 1px solid #ccc;

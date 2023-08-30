@@ -9,6 +9,8 @@ export default function ImageList() {
   const { data, error } = useSWR("/api/images");
   if (error) return <div>failed to load</div>;
   if (!data) return <div>loading...</div>;
+
+  console.log(data);
   return (
     <StyledList>
       {/* map over our data.resources to get render every image returned*/}
