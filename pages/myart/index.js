@@ -17,8 +17,9 @@ export default function MyArt({ onToggleFavorite, isFavorite, images }) {
       <StyledMain>
         <StyledUpload>
           <ImageUploadForm />
-          <ImageList />
         </StyledUpload>
+        <ImageList />
+
         <PictureList
           pictures={pictures}
           onToggleFavorite={onToggleFavorite}

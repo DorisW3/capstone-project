@@ -55,4 +55,7 @@ const StyledButton = styled.button`
   padding: 0.25rem 1rem;
   color: white;
 `;
+
+
+
 export default ImageUploadForm;
