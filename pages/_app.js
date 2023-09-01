@@ -31,6 +31,9 @@ export default function App({ Component, pageProps }) {
 
   const [images, setImages] = useState(pictures);
 
+
+  //update function
+
   function handleToggleFavorite(id) {
     setImages(
       images.map((image) =>

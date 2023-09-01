@@ -3,7 +3,7 @@ import PictureList from "../../components/PictureList";
 import pictures from "../../lib/db.js";
 import Head from "next/head";
 import ImageUploadForm from "@/components/ImageUploadForm";
-import ImageList from "@/components/ImageList";
+import { ImageList } from "@mui/material";
 
 export default function MyArt({ onToggleFavorite, isFavorite, images }) {
   return (
