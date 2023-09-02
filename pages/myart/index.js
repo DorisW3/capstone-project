@@ -3,9 +3,14 @@ import PictureList from "../../components/PictureList";
 import pictures from "../../lib/db.js";
 import Head from "next/head";
 import ImageUploadForm from "@/components/ImageUploadForm";
-import { ImageList } from "@mui/material";
 
-export default function MyArt({ onToggleFavorite, isFavorite, images }) {
+export default function MyArt({
+  onToggleFavorite,
+  isFavorite,
+  images,
+  setImages,
+  submitImage,
+}) {
   return (
     <>
       <Heading>My Art</Heading>
@@ -16,15 +21,16 @@ export default function MyArt({ onToggleFavorite, isFavorite, images }) {
       </Head>
       <StyledMain>
         <StyledUpload>
-          <ImageUploadForm />
+          <ImageUploadForm images={images} setImages={setImages} />
         </StyledUpload>
-        <ImageList />
 
         <PictureList
           pictures={pictures}
           onToggleFavorite={onToggleFavorite}
           isFavorite={isFavorite}
           images={images}
+          setImages={setImages}
+          submitImage={submitImage}
         />
       </StyledMain>
     </>

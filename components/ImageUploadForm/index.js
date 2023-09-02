@@ -2,8 +2,8 @@ import React, { useState } from "react";
 import styled from "styled-components";
 import useSWR from "swr";
 
-function ImageUploadForm() {
-  const { mutate } = useSWR("/api/images/");
+function ImageUploadForm({ images, setImages }) {
+  const { mutate } = useSWR("/api/images");
 
   const [uploadStatus, setUploadStatus] = useState("");
   const [error, setError] = useState(undefined);
@@ -12,50 +12,47 @@ function ImageUploadForm() {
     event.preventDefault();
     setUploadStatus("Uploading...");
     const formData = new FormData(event.target);
-
+    const data = Object.fromEntries(formData);
     try {
+      console.log("BEFORE POST");
       const response = await fetch("/api/upload", {
-        method: "post",
+        method: "POST",
         body: formData,
       });
 
       if (response.status === 201) {
-        mutate();
+        console.log(response);
+        setTimeout(() => mutate(), 500);
 
         setUploadStatus("Upload complete!");
       }
+      const image = await response.json();
+
+      const newImage = {
+        id: image.public_id,
+        isFavorite: false,
+        image: `/images/${image.public_id}`,
+        theme: data.theme,
+        description: data.description,
+        username: data.username,
+        isCloudinaryImage: true,
+      };
+
+      console.log(newImage, "test");
+
+      setImages([newImage, ...images]);
+
+      event.target.reset();
+      event.target.elements.title.focus();
     } catch (error) {
       setError(error);
     }
   }
 
-  function submitUploadImage(event) {
-    event.preventDefault();
-
-    const formData = new FormData(event.target);
-    const data = Object.fromEntries(formData);
-
-    const newImage = {
-      id: image.public_id,
-      image: `/images/${image.public_id}`,
-      theme: data.theme,
-      description: data.description,
-      username: data.username,
-      isCloudinaryImage: true,
-    };
-
-    onAddImage(newImage);
-
-    console.log(newImage, "test");
-
-    event.target.reset();
-    event.target.elements.title.focus();
-  }
-
   return (
     <>
       <h2>Image Upload</h2>
-      <Form onSubmit={submitImage || submitUploadImage}>
+      <Form submitImage={submitImage}>
         <StyledFileLabel htmlFor="file">
           <StyledFileInput type="file" name="file" aria-label="file upload" />
         </StyledFileLabel>
@@ -72,7 +69,7 @@ function ImageUploadForm() {
           aria-label="theme or title"
         />
         <StyledInput
-          type="text"
+          type="textarea"
           name="description"
           placeholder="description"
           aria-label="description"
@@ -102,6 +99,9 @@ const StyledButton = styled.button`
   text-align: center;
   color: white;
   cursor: pointer;
+  &:hover {
+    background-color: transparent;
+  }
 `;
 
 const StyledInput = styled.input`

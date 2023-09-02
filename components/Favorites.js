@@ -4,7 +4,11 @@ import StyledImage from "./StyledImage";
 import Link from "next/link";
 import styled from "@emotion/styled";
 
-export default function Favorites({ onToggleFavorite, isFavorite }) {
+export default function Favorites({
+  onToggleFavorite,
+  isFavorite,
+  submitImage,
+}) {
   return (
     <ul>
       {pictures.map((picture) => (
@@ -17,6 +21,7 @@ export default function Favorites({ onToggleFavorite, isFavorite }) {
             <StyledImage
               src={picture.image}
               alt={picture.theme}
+              submitImage={submitImage}
               height={300}
               width={200}
               priority={true} // bei Bildern mit großer Datenmenge, verbessert der Code das laden
