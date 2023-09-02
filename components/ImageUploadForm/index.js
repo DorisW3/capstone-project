@@ -1,8 +1,9 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 import useSWR from "swr";
+import { uid } from "uid";
 
-function ImageUploadForm({ images, setImages }) {
+function ImageUploadForm() {
   const { mutate } = useSWR("/api/images");
 
   const [uploadStatus, setUploadStatus] = useState("");
@@ -30,7 +31,6 @@ function ImageUploadForm({ images, setImages }) {
 
       const newImage = {
         id: image.public_id,
-        isFavorite: false,
         image: `/images/${image.public_id}`,
         theme: data.theme,
         description: data.description,
@@ -40,19 +40,21 @@ function ImageUploadForm({ images, setImages }) {
 
       console.log(newImage, "test");
 
-      setImages([newImage, ...images]);
-
       event.target.reset();
       event.target.elements.title.focus();
     } catch (error) {
       setError(error);
     }
+
+    console.log(data);
   }
+
+  //console.log(submitUploadImage);
 
   return (
     <>
       <h2>Image Upload</h2>
-      <Form submitImage={submitImage}>
+      <Form onSubmit={submitImage}>
         <StyledFileLabel htmlFor="file">
           <StyledFileInput type="file" name="file" aria-label="file upload" />
         </StyledFileLabel>
@@ -69,7 +71,7 @@ function ImageUploadForm({ images, setImages }) {
           aria-label="theme or title"
         />
         <StyledInput
-          type="textarea"
+          type="text"
           name="description"
           placeholder="description"
           aria-label="description"

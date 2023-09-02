@@ -4,7 +4,7 @@ import Link from "next/link.js";
 import FavoriteButton from "./FavoriteButton.js";
 import useSWR from "swr";
 
-export default function PictureList({ onToggleFavorite, images, submitImage }) {
+export default function PictureList({ onToggleFavorite, images }) {
   const { data, error } = useSWR("/api/images");
   if (error) return <div>failed to load</div>;
   if (!data) return <div>loading...</div>;
@@ -13,7 +13,7 @@ export default function PictureList({ onToggleFavorite, images, submitImage }) {
 
   return (
     <>
-      <StyledList submitImage={submitImage}>
+      <StyledList>
         {/* map over our data.resources to get render every image returned*/}
         {data.resources?.map((image) => (
           <StyledListItem key={image.asset_id}>

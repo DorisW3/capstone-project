@@ -4,11 +4,7 @@ import { EntriesList } from "@/components/EntriesList";
 import { useRouter } from "next/router";
 import pictures from "@/lib/db";
 
-export default function DetailsComments({
-  entriesList,
-  handleAddEntry,
-  submitImage,
-}) {
+export default function DetailsComments({ entriesList, handleAddEntry }) {
   const router = useRouter();
   const routerId = router.query.index;
 
@@ -20,10 +16,7 @@ export default function DetailsComments({
     <>
       <h1>Details Page</h1>
       <main>
-        <PictureDetails
-          selectedPicture={selectedPicture}
-          submitImage={submitImage}
-        />
+        <PictureDetails selectedPicture={selectedPicture} />
         <EntryForm onAddEntry={handleAddEntry} routerId={routerId} />
         <EntriesList
           entriesList={entriesList}

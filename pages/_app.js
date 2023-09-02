@@ -19,7 +19,7 @@ async function fetcher(...args) {
   }
 }
 
-export default function App({ Component, pageProps, submitImage }) {
+export default function App({ Component, pageProps }) {
   // ----- initial entires werden ge-updatet -> new entries können hinzugefügt werden
   const [entriesList, setEntriesList] = useLocalStorageState("initialEntries", {
     defaultValue: initialEntries,
@@ -54,8 +54,6 @@ export default function App({ Component, pageProps, submitImage }) {
             entriesList={entriesList}
             onToggleFavorite={handleToggleFavorite}
             images={images}
-            setImages={setImages}
-            submitImage={submitImage}
           />
         </Layout>
       </SWRConfig>
