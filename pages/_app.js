@@ -31,6 +31,11 @@ export default function App({ Component, pageProps }) {
 
   const [images, setImages] = useState(pictures);
 
+  function handleAddImage(newImage) {
+    setImages([newImage, ...images]);
+    console.log(newImage, "2");
+  }
+
   //update function
 
   function handleToggleFavorite(id) {
@@ -54,6 +59,7 @@ export default function App({ Component, pageProps }) {
             entriesList={entriesList}
             onToggleFavorite={handleToggleFavorite}
             images={images}
+            handleAddImage={handleAddImage}
           />
         </Layout>
       </SWRConfig>

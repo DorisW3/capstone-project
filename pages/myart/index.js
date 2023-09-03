@@ -4,7 +4,14 @@ import pictures from "../../lib/db.js";
 import Head from "next/head";
 import ImageUploadForm from "@/components/ImageUploadForm";
 
-export default function MyArt({ onToggleFavorite, isFavorite, images }) {
+export default function MyArt({
+  onToggleFavorite,
+  isFavorite,
+  images,
+  setImages,
+  handleAddImage,
+}) {
+  //console.log(submitImage, "1");
   return (
     <>
       <Heading>My Art</Heading>
@@ -15,7 +22,7 @@ export default function MyArt({ onToggleFavorite, isFavorite, images }) {
       </Head>
       <StyledMain>
         <StyledUpload>
-          <ImageUploadForm />
+          <ImageUploadForm onAddImage={handleAddImage} />
         </StyledUpload>
 
         <PictureList
@@ -23,6 +30,8 @@ export default function MyArt({ onToggleFavorite, isFavorite, images }) {
           onToggleFavorite={onToggleFavorite}
           isFavorite={isFavorite}
           images={images}
+          setImages={setImages}
+          handleAddImage={handleAddImage}
         />
       </StyledMain>
     </>

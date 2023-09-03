@@ -9,12 +9,12 @@ export default function PictureList({ onToggleFavorite, images }) {
   if (error) return <div>failed to load</div>;
   if (!data) return <div>loading...</div>;
 
-  //console.log(data.data, "id");
+  console.log(data, "id");
 
   return (
     <>
-      <StyledList>
-        {/* map over our data.resources to get render every image returned*/}
+      {/*<StyledList>
+         map over our data.resources to get render every image returned
         {data.resources?.map((image) => (
           <StyledListItem key={image.asset_id}>
             <FavoriteButton
@@ -34,16 +34,11 @@ export default function PictureList({ onToggleFavorite, images }) {
             <StyledTheme>{image.theme}</StyledTheme>
           </StyledListItem>
         ))}
-      </StyledList>
+        </StyledList>*/}
 
       <ul>
         {images
-          .filter(
-            (picture) =>
-              picture.username === "dolorisi" &&
-              picture.id >= 1 &&
-              picture.id <= 8
-          )
+          .filter((picture) => picture.username === "dolorisi")
           .map((picture) => (
             <StyledListItem key={picture.id}>
               <FavoriteButton

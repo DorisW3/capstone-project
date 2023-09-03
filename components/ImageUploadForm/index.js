@@ -3,7 +3,7 @@ import styled from "styled-components";
 import useSWR from "swr";
 import { uid } from "uid";
 
-function ImageUploadForm() {
+function ImageUploadForm({ onAddImage }) {
   const { mutate } = useSWR("/api/images");
 
   const [uploadStatus, setUploadStatus] = useState("");
@@ -40,10 +40,13 @@ function ImageUploadForm() {
 
       console.log(newImage, "test");
 
+      onAddImage(newImage);
+
       event.target.reset();
       event.target.elements.title.focus();
     } catch (error) {
       setError(error);
+      console.log(error);
     }
 
     console.log(data);
