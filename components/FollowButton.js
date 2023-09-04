@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { styled } from "styled-components";
+import styled from "styled-components";
 
 export default function FollowButton() {
   const [isFollowing, setIsFollowing] = useState(false);

@@ -29,11 +29,12 @@ export default function App({ Component, pageProps }) {
     setEntriesList([newEntry, ...entriesList]);
   }
 
-  const [images, setImages] = useState(pictures);
+  const [images, setImages] = useLocalStorageState("pictures", {
+    defaultValue: pictures,
+  });
 
   function handleAddImage(newImage) {
     setImages([newImage, ...images]);
-    console.log(newImage, "2");
   }
 
   //update function

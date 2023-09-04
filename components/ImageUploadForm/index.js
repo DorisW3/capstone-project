@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 import useSWR from "swr";
-import { uid } from "uid";
 
 function ImageUploadForm({ onAddImage }) {
   const { mutate } = useSWR("/api/images");
@@ -15,14 +14,12 @@ function ImageUploadForm({ onAddImage }) {
     const formData = new FormData(event.target);
     const data = Object.fromEntries(formData);
     try {
-      console.log("BEFORE POST");
       const response = await fetch("/api/upload", {
         method: "POST",
         body: formData,
       });
 
       if (response.status === 201) {
-        console.log(response);
         setTimeout(() => mutate(), 500);
 
         setUploadStatus("Upload complete!");
@@ -31,14 +28,12 @@ function ImageUploadForm({ onAddImage }) {
 
       const newImage = {
         id: image.public_id,
-        image: `/images/${image.public_id}`,
+        image: image.secure_url,
         theme: data.theme,
         description: data.description,
         username: data.username,
         isCloudinaryImage: true,
       };
-
-      console.log(newImage, "test");
 
       onAddImage(newImage);
 
@@ -46,13 +41,8 @@ function ImageUploadForm({ onAddImage }) {
       event.target.elements.title.focus();
     } catch (error) {
       setError(error);
-      console.log(error);
     }
-
-    console.log(data);
   }
-
-  //console.log(submitUploadImage);
 
   return (
     <>

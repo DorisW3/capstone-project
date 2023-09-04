@@ -1,4 +1,4 @@
-import { styled } from "styled-components";
+import styled from "styled-components";
 import PictureList from "../../components/PictureList";
 import pictures from "../../lib/db.js";
 import Head from "next/head";
@@ -11,7 +11,6 @@ export default function MyArt({
   setImages,
   handleAddImage,
 }) {
-  //console.log(submitImage, "1");
   return (
     <>
       <Heading>My Art</Heading>

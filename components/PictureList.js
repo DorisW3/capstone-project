@@ -1,4 +1,4 @@
-import { styled } from "styled-components";
+import styled from "styled-components";
 import StyledImage from "./StyledImage.js";
 import Link from "next/link.js";
 import FavoriteButton from "./FavoriteButton.js";
@@ -9,56 +9,29 @@ export default function PictureList({ onToggleFavorite, images }) {
   if (error) return <div>failed to load</div>;
   if (!data) return <div>loading...</div>;
 
-  console.log(data, "id");
-
   return (
-    <>
-      {/*<StyledList>
-         map over our data.resources to get render every image returned
-        {data.resources?.map((image) => (
-          <StyledListItem key={image.asset_id}>
+    <ul>
+      {images
+        .filter((picture) => picture.username === "dolorisi")
+        .map((picture) => (
+          <StyledListItem key={picture.id}>
             <FavoriteButton
-              onToggleFavorite={() => onToggleFavorite(image.public_id)}
-              isFavorite={image.isFavorite}
+              onToggleFavorite={() => onToggleFavorite(picture.id)}
+              isFavorite={picture.isFavorite}
             />
-            <Link href={`/images/${image.public_id}`} key={image.asset_id}>
+            <Link href={`/details/${picture.id}`}>
               <StyledImage
-                key={image.public_id}
-                src={image.url}
+                src={picture.image}
+                alt={picture.theme}
                 height={300}
                 width={200}
-                priority={true}
-                alt={`Image-Id: ${image.public_id}`}
+                priority={true} // bei Bildern mit großer Datenmenge, verbessert der Code das laden
               />
             </Link>
-            <StyledTheme>{image.theme}</StyledTheme>
+            <StyledTheme>{picture.theme}</StyledTheme>
           </StyledListItem>
         ))}
-        </StyledList>*/}
-
-      <ul>
-        {images
-          .filter((picture) => picture.username === "dolorisi")
-          .map((picture) => (
-            <StyledListItem key={picture.id}>
-              <FavoriteButton
-                onToggleFavorite={() => onToggleFavorite(picture.id)}
-                isFavorite={picture.isFavorite}
-              />
-              <Link href={`/details/${picture.id}`}>
-                <StyledImage
-                  src={picture.image}
-                  alt={picture.theme}
-                  height={300}
-                  width={200}
-                  priority={true} // bei Bildern mit großer Datenmenge, verbessert der Code das laden
-                />
-              </Link>
-              <StyledTheme>{picture.theme}</StyledTheme>
-            </StyledListItem>
-          ))}
-      </ul>
-    </>
+    </ul>
   );
 }
 

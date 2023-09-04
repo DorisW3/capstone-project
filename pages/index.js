@@ -1,4 +1,4 @@
-import { styled } from "styled-components";
+import styled from "styled-components";
 import Overview from "@/components/Overview";
 
 export default function Homepage({ onToggleFavorite, isFavorite, images }) {

@@ -1,6 +1,6 @@
 import pictures from "@/lib/db";
 import StyledImage from "./StyledImage";
-import { styled } from "styled-components";
+import styled from "styled-components";
 
 export default function PictureDetails({ selectedPicture }) {
   if (!selectedPicture) {
