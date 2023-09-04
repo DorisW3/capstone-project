@@ -33,8 +33,6 @@ export default async function handler(req, res) {
 
     const result = await cloudinary.v2.uploader.upload(filepath, {
       public_id: newFilename,
-
-      tags: ["some", "example", "tag"],
     });
 
     return res.status(201).json(result);

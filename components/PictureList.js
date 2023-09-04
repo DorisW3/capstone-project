@@ -12,7 +12,7 @@ export default function PictureList({ onToggleFavorite, images }) {
   return (
     <ul>
       {images
-        .filter((picture) => picture.username === "dolorisi")
+        .filter((picture) => picture.username === "dolorisi") //simulates one specific user, it will replaced by a proper user profile logic later
         .map((picture) => (
           <StyledListItem key={picture.id}>
             <FavoriteButton

@@ -29,15 +29,13 @@ export default function App({ Component, pageProps }) {
     setEntriesList([newEntry, ...entriesList]);
   }
 
-  const [images, setImages] = useLocalStorageState("pictures", {
+  const [images, setImages] = useLocalStorageState("staticDummyDataImages", {
     defaultValue: pictures,
   });
 
   function handleAddImage(newImage) {
     setImages([newImage, ...images]);
   }
-
-  //update function
 
   function handleToggleFavorite(id) {
     setImages(
@@ -47,7 +45,6 @@ export default function App({ Component, pageProps }) {
     );
   }
 
-  //<SWRConfig value={{ fetcher }}> for image upload feature
   return (
     <>
       <SWRConfig value={{ fetcher }}>
