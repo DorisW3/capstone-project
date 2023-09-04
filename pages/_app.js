@@ -1,10 +1,23 @@
 import GlobalStyle from "../styles";
 import Layout from "@/components/Layout";
-import initialEntries from "@/commentsdb";
+import initialEntries from "@/lib/commentsdb";
 import useLocalStorageState from "use-local-storage-state";
 import styled from "styled-components";
-import pictures from "@/db";
+import pictures from "@/lib/db";
 import { useState } from "react";
+import { SWRConfig } from "swr";
+
+// for image upload feature
+async function fetcher(...args) {
+  try {
+    const response = await fetch(...args);
+    const data = await response.json();
+    return data;
+  } catch (error) {
+    console.error(error);
+    throw error;
+  }
+}
 
 export default function App({ Component, pageProps }) {
   // ----- initial entires werden ge-updatet -> new entries können hinzugefügt werden
@@ -16,7 +29,13 @@ export default function App({ Component, pageProps }) {
     setEntriesList([newEntry, ...entriesList]);
   }
 
-  const [images, setImages] = useState(pictures);
+  const [images, setImages] = useLocalStorageState("staticDummyDataImages", {
+    defaultValue: pictures,
+  });
+
+  function handleAddImage(newImage) {
+    setImages([newImage, ...images]);
+  }
 
   function handleToggleFavorite(id) {
     setImages(
@@ -28,17 +47,20 @@ export default function App({ Component, pageProps }) {
 
   return (
     <>
-      <GlobalStyle />
-      <Layout>
-        <StyledAppName>Art Connect</StyledAppName>
-        <Component
-          {...pageProps}
-          handleAddEntry={handleAddEntry}
-          entriesList={entriesList}
-          onToggleFavorite={handleToggleFavorite}
-          images={images}
-        />
-      </Layout>
+      <SWRConfig value={{ fetcher }}>
+        <GlobalStyle />
+        <Layout>
+          <StyledAppName>Art Connect</StyledAppName>
+          <Component
+            {...pageProps}
+            handleAddEntry={handleAddEntry}
+            entriesList={entriesList}
+            onToggleFavorite={handleToggleFavorite}
+            images={images}
+            handleAddImage={handleAddImage}
+          />
+        </Layout>
+      </SWRConfig>
     </>
   );
 }
