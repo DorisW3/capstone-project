@@ -56,7 +56,7 @@ export default function Overview({ onToggleFavorite, images }) {
 }
 
 const StyledBody = styled.ul`
-  margin-top: 4rem;
+  margin-top: 3rem;
 `;
 
 const StyledListItem = styled.li`

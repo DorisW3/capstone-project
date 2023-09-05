@@ -37,7 +37,7 @@ export default function MyArt({
   );
 }
 
-const Heading = styled.h1`
+const Heading = styled.h2`
   text-align: center;
   font-size: 2rem;
   margin-bottom: 2rem;

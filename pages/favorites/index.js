@@ -14,15 +14,9 @@ export default function favorites({ images, onToggleFavorite }) {
       ) : (
         <>
           <Heading>Favorites</Heading>
-          <ul>
+          <StyledBody>
             {Favorites.map((Favorite) => (
               <StyledListItem key={Favorite.id}>
-                <FavoriteButton
-                  onToggleFavorite={() => {
-                    onToggleFavorite(Favorite.id);
-                  }}
-                  isFavorite={Favorite.isFavorite}
-                />
                 <Link href={`/details/${Favorite.id}`}>
                   <StyledImage
                     src={Favorite.image}
@@ -33,6 +27,12 @@ export default function favorites({ images, onToggleFavorite }) {
                   />
                 </Link>
                 <StyledContainer>
+                  <FavoriteButton
+                    onToggleFavorite={() => {
+                      onToggleFavorite(Favorite.id);
+                    }}
+                    isFavorite={Favorite.isFavorite}
+                  />
                   <StyledUserName>
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -51,32 +51,39 @@ export default function favorites({ images, onToggleFavorite }) {
                 </StyledContainer>
               </StyledListItem>
             ))}
-          </ul>
+          </StyledBody>
         </>
       )}
     </>
   );
 }
 
-const Heading = styled.h1`
+const StyledBody = styled.ul`
+  margin-top: 3rem;
+`;
+
+const Heading = styled.h2`
   text-align: center;
   font-size: 2rem;
   margin-bottom: 2rem;
 `;
 
+const StyledListItem = styled.li`
+  position: relative;
+`;
+
 const StyledContainer = styled.div`
   display: flex;
   flex-direction: row;
-  justify-content: center;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: -2.75rem;
 `;
 
 const StyledUserName = styled.h2`
   text-align: center;
+  font-weight: 400;
   font-size: 1.2rem;
-  margin-bottom: 3rem;
-  margin-top: 1rem;
-`;
-
-const StyledListItem = styled.li`
-  position: relative;
+  margin-bottom: 4rem;
+  padding-top: 3.85rem;
 `;
