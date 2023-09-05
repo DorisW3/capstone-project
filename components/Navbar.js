@@ -1,9 +1,14 @@
 import Link from "next/link";
 import styled from "styled-components";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import ReactDOM from "react-dom";
+import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
+import { faHouse } from "@fortawesome/free-solid-svg-icons";
 
 export default function Navbar() {
   return (
     <StyledNavigation>
+      <FontAwesomeIcon icon={faHouse} />
       <StyledLink href={"/"}>Overview</StyledLink>
       <StyledLink href={"/myart"}>My Art</StyledLink>
       <StyledLink href={"/favorites"}>Favorites</StyledLink>
