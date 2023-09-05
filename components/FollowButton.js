@@ -16,10 +16,10 @@ export default function FollowButton() {
 }
 
 const StyledButton = styled.button`
-  background-color: slateblue;
+  background-color: var(--background-color);
   border-radius: 0.5em;
   margin: 0.5em 1em 3em 1em;
   padding: 0.25em 0.5em;
-  color: white;
+  color: var(--font-color);
   text-decoration: none;
 `;

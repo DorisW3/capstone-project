@@ -85,14 +85,14 @@ const Form = styled.form`
 `;
 
 const StyledButton = styled.button`
-  background-color: slateblue;
+  background-color: var(--background-color);
   margin-top: 1.5rem;
   border-radius: 0.5rem;
   padding: 0.25rem 1rem;
   width: 4.5rem;
   align-self: center;
   text-align: center;
-  color: white;
+  color: var(--font-color);
   cursor: pointer;
   &:hover {
     background-color: transparent;
@@ -111,7 +111,7 @@ const StyledFileLabel = styled.label``;
 const StyledFileInput = styled.input`
   padding: 0.15rem;
   margin: 0.5rem;
-  background-color: #efefef;
+  background-color: var(--background-color);
   padding: 22px;
   border-radius: 16px;
   &:hover {

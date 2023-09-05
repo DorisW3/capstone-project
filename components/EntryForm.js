@@ -108,9 +108,9 @@ const StyledTextarea = styled.textarea`
 `;
 
 const StyledButton = styled.button`
-  background-color: slateblue;
+  background-color: var(--background-color);
   border-radius: 0.5rem;
   padding: 0.5rem;
-  color: white;
+  color: var(--font-color);
   text-decoration: none;
 `;

@@ -66,8 +66,8 @@ export default function App({ Component, pageProps }) {
 }
 
 const StyledAppName = styled.h1`
-  color: slateblue;
-  border-bottom: 2px solid slategray;
+  color: var(--font-color);
+  border-bottom: 2px solid var(--background-color);
   margin-bottom: 1rem;
   padding-bottom: 2rem;
 `;
