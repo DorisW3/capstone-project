@@ -15,8 +15,10 @@ export function EntriesList({ entriesList, routerId }) {
           <StyledSection key={entry.id}>
             {index > 0 ? <Divider /> : null}
             <StyledDiv>
-              <time>{entry.date}</time>
-              <h2>&quot;{entry.title}&quot;</h2>
+              <time style={{ paddingLeft: "29.5rem", fontSize: "12px" }}>
+                {entry.date}
+              </time>
+              <h3 style={{ fontWeight: "600" }}>&quot;{entry.title}&quot;</h3>
               <StyledEntry>{entry.comment}</StyledEntry>
             </StyledDiv>
           </StyledSection>
@@ -28,20 +30,21 @@ export function EntriesList({ entriesList, routerId }) {
 
 const StyledSection = styled.section`
   display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  width: 85%;
-  gap: 1rem;
+  flex-flow: column wrap;
+  width: 100%;
+  gap: 2rem;
 `;
 
 const StyledDiv = styled.div`
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  margin-top: 1rem;
-  margin-bottom: 2rem;
+  gap: 4px;
+  margin: 1.5rem 0.75rem;
 `;
 
 const StyledEntry = styled.p`
   word-break: break-word;
+  text-align: justify;
+  padding-top: 1rem;
 `;
