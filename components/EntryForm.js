@@ -32,7 +32,7 @@ export default function EntryForm({ onAddEntry, routerId }) {
     <StyledForm onSubmit={handleSubmitEntry}>
       <StyledHeading>New Entry</StyledHeading>
       <StyledDivTitle>
-        <label htmlFor="title">Title</label>
+        <StyledLabel htmlFor="title">Title</StyledLabel>
         <StyledInputTitle
           type="text"
           maxLength="50"
@@ -43,7 +43,7 @@ export default function EntryForm({ onAddEntry, routerId }) {
         ></StyledInputTitle>
       </StyledDivTitle>
       <StyledDivComment>
-        <label htmlFor="comment">Comment</label>
+        <StyledLabel htmlFor="comment">Comment</StyledLabel>
         <StyledTextarea
           type="text"
           id="comment"
@@ -98,6 +98,12 @@ const StyledDivTitle = styled.div`
   padding-left: 3rem;
 `;
 
+const StyledLabel = styled.label`
+  display: flex;
+  justify-content: flex-start;
+  margin: 0.5rem 0.5rem;
+`;
+
 const StyledDivComment = styled.div`
   display: flex;
   flex-direction: column;
@@ -108,7 +114,7 @@ const StyledDivComment = styled.div`
 
 const StyledInputTitle = styled.input`
   border: 1px solid var(--form-color);
-  border-radius: 8px;
+  border-radius: 4px;
   resize: none;
   padding: 8px 20px;
   &:focus {
@@ -119,7 +125,7 @@ const StyledInputTitle = styled.input`
 
 const StyledTextarea = styled.textarea`
   border: 1px solid var(--form-color);
-  border-radius: 8px;
+  border-radius: 4px;
   resize: vertical;
   max-height: 600px;
   padding: 25px 20px;
