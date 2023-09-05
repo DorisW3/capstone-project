@@ -28,6 +28,7 @@
     "node-localstorage": "^3.0.5",
     "react": "18.2.0",
     "react-color-palette": "^7.0.4",
+    "react-components": "^0.5.1",
     "react-dom": "18.2.0",
     "styled-components": "^6.0.2",
     "swr": "^2.2.2",

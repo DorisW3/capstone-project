@@ -1,5 +1,7 @@
 import { uid } from "uid";
 import styled from "styled-components";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faPaintbrush } from "@fortawesome/free-solid-svg-icons";
 
 export default function EntryForm({ onAddEntry, routerId }) {
   function handleSubmitEntry(event) {
@@ -47,11 +49,21 @@ export default function EntryForm({ onAddEntry, routerId }) {
           id="comment"
           name="comment"
           maxLength="480"
+          rows={3}
+          placeholder="Remember, be nice!"
           required
         ></StyledTextarea>
       </StyledDivComment>
       <div>
-        <StyledButton type="submit">Create</StyledButton>
+        <StyledButton type="submit">
+          <FontAwesomeIcon
+            icon={faPaintbrush}
+            width={15}
+            height={15}
+            style={{ position: "static" }}
+          />
+          {"  "}create
+        </StyledButton>
       </div>
     </StyledForm>
   );
@@ -65,12 +77,13 @@ const StyledForm = styled.form`
   gap: 2rem;
   margin-top: 1.5rem;
   margin-bottom: 1.5rem;
-  border: 1px solid slategray;
-  border-radius: 4px;
+  border: 1px solid var(--form-color);
+  border-radius: 8px;
   padding: 2rem;
 `;
 
 const StyledHeading = styled.h2`
+  font-weight: 500;
   text-transform: uppercase;
   display: flex;
   flex-direction: column;
@@ -94,23 +107,40 @@ const StyledDivComment = styled.div`
 `;
 
 const StyledInputTitle = styled.input`
-  border: 1px solid slategray;
-  border-radius: 4px;
+  border: 1px solid var(--form-color);
+  border-radius: 8px;
   resize: none;
   padding: 8px 20px;
+  &:focus {
+    outline: none;
+    box-shadow: 0 0 0 0.05rem var(--violette-color);
+  }
 `;
 
 const StyledTextarea = styled.textarea`
-  border: 1px solid slategray;
-  border-radius: 4px;
-  resize: none;
+  border: 1px solid var(--form-color);
+  border-radius: 8px;
+  resize: vertical;
+  max-height: 600px;
   padding: 25px 20px;
+  &:focus {
+    outline: none;
+    box-shadow: 0 0 0 0.05rem var(--violette-color);
+  }
 `;
 
 const StyledButton = styled.button`
-  background-color: var(--background-color);
-  border-radius: 0.5rem;
-  padding: 0.5rem;
+  cursor: pointer;
+  background-color: var(--border-color);
+  border-radius: 8px;
+  border: none;
+  text-transform: uppercase;
+  font-size: medium;
+  font-weight: bold;
+  padding: 0.5rem 1rem;
   color: var(--font-color);
-  text-decoration: none;
+  &:hover {
+    background-color: var(--violette-color);
+    color: white;
+  }
 `;

@@ -16,7 +16,7 @@ export function EntriesList({ entriesList, routerId }) {
             {index > 0 ? <Divider /> : null}
             <StyledDiv>
               <time>{entry.date}</time>
-              <h2>{entry.title}</h2>
+              <h2>&quot;{entry.title}&quot;</h2>
               <StyledEntry>{entry.comment}</StyledEntry>
             </StyledDiv>
           </StyledSection>

@@ -4,8 +4,8 @@ import initialEntries from "@/lib/commentsdb";
 import useLocalStorageState from "use-local-storage-state";
 import styled from "styled-components";
 import pictures from "@/lib/db";
-import { useState } from "react";
 import { SWRConfig } from "swr";
+import Header from "@/components/Header";
 
 // for image upload feature
 async function fetcher(...args) {
@@ -50,7 +50,7 @@ export default function App({ Component, pageProps }) {
       <SWRConfig value={{ fetcher }}>
         <GlobalStyle />
         <Layout>
-          <StyledAppName>Art Connect</StyledAppName>
+          <Header>Art Connect</Header>
           <Component
             {...pageProps}
             handleAddEntry={handleAddEntry}

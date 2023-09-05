@@ -16,8 +16,6 @@ export default function PictureDetails({ selectedPicture }) {
         width={200}
         priority={true} // bei Bildern mit großer Datenmenge, verbessert der Code das Laden
       />
-      <p>{selectedPicture.theme}</p>
-      <p>{selectedPicture.description}</p>
       <p>
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -32,6 +30,8 @@ export default function PictureDetails({ selectedPicture }) {
         </svg>{" "}
         {selectedPicture.username}
       </p>
+      <p>&quot;{selectedPicture.theme}&quot;</p>
+      <p>{selectedPicture.description}</p>
     </StyledArcticle>
   );
 }
@@ -39,5 +39,5 @@ export default function PictureDetails({ selectedPicture }) {
 const StyledArcticle = styled.article`
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-start;
 `;

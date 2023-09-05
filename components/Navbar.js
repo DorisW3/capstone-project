@@ -1,9 +1,8 @@
 import Link from "next/link";
 import styled from "styled-components";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import ReactDOM from "react-dom";
-import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
-import { faHouse, faImage, faPalette } from "@fortawesome/free-solid-svg-icons";
+import { faHouse, faPalette } from "@fortawesome/free-solid-svg-icons";
+import { faImage } from "@fortawesome/free-regular-svg-icons";
 
 export default function Navbar() {
   return (
@@ -29,8 +28,9 @@ const StyledNavigation = styled.nav`
   justify-content: space-around;
   padding-top: 1.5rem;
   padding-bottom: 1rem;
-  margin-bottom: 1rem;
-  background-color: var(--background-color);
+  margin-bottom: 0;
+  border-top: solid 2px var(--border-color);
+  background-color: white;
 `;
 
 const StyledLink = styled(Link)`

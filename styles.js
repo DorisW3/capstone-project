@@ -3,8 +3,10 @@ import { createGlobalStyle } from "styled-components";
 export default createGlobalStyle`
   
   :root{
-    --background-color: #efefef;
     --font-color: #596978;
+    --border-color: #dedede;
+    --violette-color: #6257e3;
+    --form-color: #cccccc;
   }
   
   *,
