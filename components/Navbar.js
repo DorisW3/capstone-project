@@ -4,10 +4,9 @@ import Star from "./Star";
 import { useRouter } from "next/router";
 import FilledStar from "./FilledStar";
 import Artist from "./Artist";
-
-import FilledArtist from "./FilledStar";
 import Gallery from "./Gallery";
 import FilledGallery from "./FilledGallery";
+import FilledArtist from "./FilledArtist";
 
 export default function Navbar() {
   const router = useRouter();

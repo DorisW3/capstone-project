@@ -9,7 +9,7 @@ export default function FollowButton() {
     <div>
       {isFollowing ? (
         <StyledImage
-          src="/unfollow.png"
+          src="/unfollow2.0.png"
           alt="unfollow"
           width={100}
           height={35}

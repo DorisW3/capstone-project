@@ -5,8 +5,8 @@ export default function Star() {
     <Image
       src="/star.png"
       alt="star icon from flaticon"
-      width={35}
-      height={35}
+      width={45}
+      height={45}
     />
   );
 }

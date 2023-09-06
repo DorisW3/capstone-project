@@ -7,7 +7,7 @@ export function EntriesList({ entriesList, routerId }) {
   );
 
   if (pictureWithInitialEntires.length === 0) {
-    return <p>There are no comments yet!</p>;
+    return <p style={{ marginBottom: "4rem" }}>There are no comments yet!</p>;
   } else {
     return (
       <>
@@ -33,6 +33,7 @@ const StyledSection = styled.section`
   flex-flow: column wrap;
   width: 100%;
   gap: 2rem;
+  margin-bottom: 1.5rem;
 `;
 
 const StyledDiv = styled.div`

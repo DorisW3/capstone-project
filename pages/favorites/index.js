@@ -11,7 +11,7 @@ export default function favorites({ images, onToggleFavorite }) {
   return (
     <>
       {Favorites.length === 0 ? (
-        "There are no favorites yet!"
+        <p style={{ marginTop: "14rem" }}>There are no favorites yet!</p>
       ) : (
         <StyledBody>
           {Favorites.map((Favorite) => (
