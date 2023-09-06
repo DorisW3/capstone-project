@@ -1,20 +1,36 @@
 import Link from "next/link";
 import styled from "styled-components";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faHouse, faPalette } from "@fortawesome/free-solid-svg-icons";
-import { faImage } from "@fortawesome/free-regular-svg-icons";
+import Image from "next/image";
+import FilledStar from "./FilledStar";
+import Star from "./Star";
+import { useRouter } from "next/router";
 
-export default function Navbar() {
+export default function Navbar({ isChosen }) {
+  const router = useRouter();
+
   return (
     <StyledNavigation>
       <StyledLink href={"/"}>
-        <FontAwesomeIcon icon={faHouse} width={35} />
+        <Image
+          src="/gallery.png"
+          alt="gallery icon from flaticon"
+          width={35}
+          height={35}
+        />
       </StyledLink>
       <StyledLink href={"/myart"}>
-        <FontAwesomeIcon icon={faImage} width={35} />
+        <Image
+          src="/Artist.png"
+          alt="artist icon from flaticon"
+          width={35}
+          height={35}
+        />
       </StyledLink>
-      <StyledLink href={"/favorites"}>
-        <FontAwesomeIcon icon={faPalette} width={35} />
+      <StyledLink
+        href={"/favorites"}
+        isActive={router.pathname === "/favorite" ? <FilledStar /> : <Star />}
+      >
+        {isChosen === true ? <FilledStar /> : <Star />}
       </StyledLink>
     </StyledNavigation>
   );
@@ -36,6 +52,5 @@ const StyledNavigation = styled.nav`
 const StyledLink = styled(Link)`
   background-color: none;
   padding: 0.5rem;
-  color: var(--font-color);
   text-decoration: none;
 `;

@@ -1,17 +1,11 @@
 import styled from "styled-components";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faPalette } from "@fortawesome/free-solid-svg-icons";
+import FilledStar from "./FilledStar";
+import Star from "./Star";
 
 export default function FavoriteButton({ onToggleFavorite, isFavorite }) {
   return (
     <StyledButton type="button" onClick={onToggleFavorite}>
-      <FontAwesomeIcon
-        icon={faPalette}
-        width={35}
-        color={
-          isFavorite === true ? "var(--violette-color)" : "var(--font-color)"
-        }
-      />
+      {isFavorite === true ? <FilledStar /> : <Star />}
     </StyledButton>
   );
 }
