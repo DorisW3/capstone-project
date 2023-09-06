@@ -13,55 +13,46 @@ export default function favorites({ images, onToggleFavorite }) {
       {Favorites.length === 0 ? (
         "There are no favorites yet!"
       ) : (
-        <>
-          <Heading>Favorites</Heading>
-          <StyledBody>
-            {Favorites.map((Favorite) => (
-              <StyledListItem key={Favorite.id}>
-                <Link href={`/details/${Favorite.id}`}>
-                  <StyledImage
-                    src={Favorite.image}
-                    alt={Favorite.theme}
-                    height={300}
-                    width={200}
-                    priority={true} // bei Bildern mit großer Datenmenge, verbessert der Code das laden
-                  />
-                </Link>
-                <StyledContainer>
-                  <FavoriteButton
-                    onToggleFavorite={() => {
-                      onToggleFavorite(Favorite.id);
-                    }}
-                    isFavorite={Favorite.isFavorite}
-                  />
-                  <StyledUserName>
-                    <Image
-                      src="/Artist.png"
-                      alt="artist icon from flaticon"
-                      width={24}
-                      height={24}
-                    />{" "}
-                    {Favorite.username}
-                  </StyledUserName>
-                  <FollowButton />
-                </StyledContainer>
-              </StyledListItem>
-            ))}
-          </StyledBody>
-        </>
+        <StyledBody>
+          {Favorites.map((Favorite) => (
+            <StyledListItem key={Favorite.id}>
+              <Link href={`/details/${Favorite.id}`}>
+                <StyledImage
+                  src={Favorite.image}
+                  alt={Favorite.theme}
+                  height={300}
+                  width={200}
+                  priority={true} // bei Bildern mit großer Datenmenge, verbessert der Code das laden
+                />
+              </Link>
+              <StyledContainer>
+                <FavoriteButton
+                  onToggleFavorite={() => {
+                    onToggleFavorite(Favorite.id);
+                  }}
+                  isFavorite={Favorite.isFavorite}
+                />
+                <StyledUserName>
+                  <Image
+                    src="/Artist.png"
+                    alt="artist icon from flaticon"
+                    width={24}
+                    height={24}
+                  />{" "}
+                  {Favorite.username}
+                </StyledUserName>
+                <FollowButton />
+              </StyledContainer>
+            </StyledListItem>
+          ))}
+        </StyledBody>
       )}
     </>
   );
 }
 
 const StyledBody = styled.ul`
-  margin-top: 3rem;
-`;
-
-const Heading = styled.h2`
-  text-align: center;
-  font-size: 2rem;
-  margin-bottom: 2rem;
+  margin-top: 14rem;
 `;
 
 const StyledListItem = styled.li`

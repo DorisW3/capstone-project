@@ -50,7 +50,7 @@ export default function App({ Component, pageProps }) {
       <SWRConfig value={{ fetcher }}>
         <GlobalStyle />
         <Layout>
-          <Header>Art Connect</Header>
+          <Header />
           <Component
             {...pageProps}
             handleAddEntry={handleAddEntry}

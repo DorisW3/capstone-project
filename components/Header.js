@@ -4,23 +4,23 @@ import styled from "styled-components";
 export default function Header() {
   return (
     <StyledHeader>
-      {/* <StyledLogo
-        src="/applogo.png"
+      <StyledLogo
+        src="/appLogo2.png"
         alt="app-logo"
-        width={400}
-        height={400}
+        width={600}
+        height={250}
         priority={true}
-      /> */}
+      />
     </StyledHeader>
   );
 }
 
 const StyledHeader = styled.section`
-  margin-left: auto;
-  margin-right: auto;
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
-  display: flex;
-  flex-direction: row;
+  z-index: 1000;
 `;
 
 const StyledLogo = styled(Image)`

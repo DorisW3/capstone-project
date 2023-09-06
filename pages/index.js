@@ -3,24 +3,15 @@ import Overview from "@/components/Overview";
 
 export default function Homepage({ onToggleFavorite, isFavorite, images }) {
   return (
-    <>
-      <Heading>Overview</Heading>
-      <StyledMain>
-        <Overview
-          onToggleFavorite={onToggleFavorite}
-          isFavorite={isFavorite}
-          images={images}
-        />
-      </StyledMain>
-    </>
+    <StyledMain>
+      <Overview
+        onToggleFavorite={onToggleFavorite}
+        isFavorite={isFavorite}
+        images={images}
+      />
+    </StyledMain>
   );
 }
-
-const Heading = styled.h1`
-  text-align: center;
-  font-size: 2rem;
-  margin-bottom: 2rem;
-`;
 
 const StyledMain = styled.main`
   display: flex;

@@ -37,15 +37,10 @@ export default function PictureList({ onToggleFavorite, images }) {
   );
 }
 
-export const StyledList = styled.ul`
-  list-style: none;
-  font-size: 1.2rem;
-  margin-bottom: 3rem;
-`;
+export const StyledList = styled.ul``;
 
 const StyledListItem = styled.li`
   position: relative;
-  list-style: none;
 `;
 
 const StyledSection = styled.section`

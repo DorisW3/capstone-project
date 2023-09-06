@@ -16,17 +16,14 @@ export default function DetailsComments({
 
   //id an formular weitergeben & an die entiresList
   return (
-    <>
-      <h1>Details Page</h1>
-      <main>
-        <PictureDetails selectedPicture={selectedPicture} />
-        <EntryForm onAddEntry={handleAddEntry} routerId={routerId} />
-        <EntriesList
-          entriesList={entriesList}
-          handleAddEntry={handleAddEntry}
-          routerId={routerId}
-        />
-      </main>
-    </>
+    <main>
+      <PictureDetails selectedPicture={selectedPicture} />
+      <EntryForm onAddEntry={handleAddEntry} routerId={routerId} />
+      <EntriesList
+        entriesList={entriesList}
+        handleAddEntry={handleAddEntry}
+        routerId={routerId}
+      />
+    </main>
   );
 }

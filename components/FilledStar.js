@@ -5,8 +5,8 @@ export default function FilledStar() {
     <Image
       src="/filledStar.png"
       alt="filled star icon from flaticon"
-      width={35}
-      height={35}
+      width={30}
+      height={30}
     />
   );
 }

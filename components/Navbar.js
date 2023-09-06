@@ -1,36 +1,27 @@
 import Link from "next/link";
 import styled from "styled-components";
-import Image from "next/image";
-import FilledStar from "./FilledStar";
 import Star from "./Star";
 import { useRouter } from "next/router";
+import FilledStar from "./FilledStar";
+import Artist from "./Artist";
 
-export default function Navbar({ isChosen }) {
+import FilledArtist from "./FilledStar";
+import Gallery from "./Gallery";
+import FilledGallery from "./FilledGallery";
+
+export default function Navbar() {
   const router = useRouter();
 
   return (
     <StyledNavigation>
       <StyledLink href={"/"}>
-        <Image
-          src="/gallery.png"
-          alt="gallery icon from flaticon"
-          width={35}
-          height={35}
-        />
+        {router.pathname === "/" ? <FilledGallery /> : <Gallery />}
       </StyledLink>
       <StyledLink href={"/myart"}>
-        <Image
-          src="/Artist.png"
-          alt="artist icon from flaticon"
-          width={35}
-          height={35}
-        />
+        {router.pathname === "/myart" ? <FilledArtist /> : <Artist />}
       </StyledLink>
-      <StyledLink
-        href={"/favorites"}
-        isActive={router.pathname === "/favorite" ? <FilledStar /> : <Star />}
-      >
-        {isChosen === true ? <FilledStar /> : <Star />}
+      <StyledLink href={"/favorites"}>
+        {router.pathname === "/favorites" ? <FilledStar /> : <Star />}
       </StyledLink>
     </StyledNavigation>
   );

@@ -52,7 +52,7 @@ export default function Overview({ onToggleFavorite, images }) {
 }
 
 const StyledBody = styled.ul`
-  margin-top: 3rem;
+  margin-top: 14rem;
 `;
 
 const StyledListItem = styled.li`

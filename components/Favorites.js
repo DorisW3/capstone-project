@@ -6,7 +6,7 @@ import styled from "@emotion/styled";
 
 export default function Favorites({ onToggleFavorite, isFavorite }) {
   return (
-    <ul>
+    <StyledList>
       {pictures.map((picture) => (
         <StyledListItem key={picture.id}>
           <FavoriteButton
@@ -18,16 +18,23 @@ export default function Favorites({ onToggleFavorite, isFavorite }) {
               src={picture.image}
               alt={picture.theme}
               height={300}
-              width={200}
+              width={250}
               priority={true} // bei Bildern mit großer Datenmenge, verbessert der Code das laden
             />
           </Link>
         </StyledListItem>
       ))}
-    </ul>
+    </StyledList>
   );
 }
 
+export const StyledList = styled.ul`
+  list-style: none;
+  font-size: 1.2rem;
+  margin-bottom: 3rem;
+`;
+
 const StyledListItem = styled.li`
   position: relative;
+  list-style: none;
 `;
