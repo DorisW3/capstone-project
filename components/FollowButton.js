@@ -1,25 +1,40 @@
 import { useState } from "react";
 import styled from "styled-components";
+import Image from "next/image";
 
 export default function FollowButton() {
   const [isFollowing, setIsFollowing] = useState(false);
 
   return (
-    <StyledButton
-      onClick={() => {
-        setIsFollowing(!isFollowing);
-      }}
-    >
-      {isFollowing ? "unfollow" : "follow"}
-    </StyledButton>
+    <div>
+      {isFollowing ? (
+        <StyledImage
+          src="/unfollow2.0.png"
+          alt="unfollow"
+          width={100}
+          height={35}
+          onClick={() => {
+            setIsFollowing(!isFollowing);
+          }}
+        />
+      ) : (
+        <StyledImage
+          src="/follow.png"
+          alt="follow"
+          width={100}
+          height={35}
+          onClick={() => {
+            setIsFollowing(!isFollowing);
+          }}
+        />
+      )}
+    </div>
   );
 }
 
-const StyledButton = styled.button`
-  background-color: slateblue;
-  border-radius: 0.5em;
-  margin: 0.5em 1em 3em 1em;
-  padding: 0.25em 0.5em;
-  color: white;
-  text-decoration: none;
+const StyledImage = styled(Image)`
+  cursor: pointer;
+  /* &:hover {
+    box-shadow: 10px 5px 5px var(--background-color);
+  } */
 `;

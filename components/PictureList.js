@@ -10,15 +10,11 @@ export default function PictureList({ onToggleFavorite, images }) {
   if (!data) return <div>loading...</div>;
 
   return (
-    <ul>
+    <StyledList>
       {images
         .filter((picture) => picture.username === "dolorisi") //simulates one specific user, it will replaced by a proper user profile logic later
         .map((picture) => (
           <StyledListItem key={picture.id}>
-            <FavoriteButton
-              onToggleFavorite={() => onToggleFavorite(picture.id)}
-              isFavorite={picture.isFavorite}
-            />
             <Link href={`/details/${picture.id}`}>
               <StyledImage
                 src={picture.image}
@@ -28,27 +24,37 @@ export default function PictureList({ onToggleFavorite, images }) {
                 priority={true} // bei Bildern mit großer Datenmenge, verbessert der Code das laden
               />
             </Link>
-            <StyledTheme>{picture.theme}</StyledTheme>
+            <StyledSection>
+              <FavoriteButton
+                onToggleFavorite={() => onToggleFavorite(picture.id)}
+                isFavorite={picture.isFavorite}
+              />
+              <StyledTheme>&quot;{picture.theme}&quot;</StyledTheme>
+            </StyledSection>
           </StyledListItem>
         ))}
-    </ul>
+    </StyledList>
   );
 }
 
-const StyledTheme = styled.h2`
-  text-align: center;
-  font-size: 1.2rem;
-  margin-bottom: 3rem;
-`;
+export const StyledList = styled.ul``;
 
 const StyledListItem = styled.li`
   position: relative;
 `;
 
-export const StyledList = styled.ul`
-  list-style: none;
-  padding: 0;
+const StyledSection = styled.section`
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 0 2rem;
+`;
+
+const StyledTheme = styled.h2`
   text-align: center;
   font-size: 1.2rem;
+  font-weight: 400;
   margin-bottom: 3rem;
+  margin-top: 0.75rem;
+  margin-left: 0.75rem;
 `;

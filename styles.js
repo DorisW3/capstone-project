@@ -1,6 +1,14 @@
 import { createGlobalStyle } from "styled-components";
 
 export default createGlobalStyle`
+  
+  :root{
+    --font-color: #596978;
+    --border-color: #dedede;
+    --violette-color: #6257e3;
+    --form-color: #cccccc;
+  }
+  
   *,
   *::before,
   *::after {
@@ -14,7 +22,7 @@ export default createGlobalStyle`
     margin: auto;
     text-align: center;
     width: 600px;
-    color: gray;
+    color: var(--font-color);
   }
 
   ul {

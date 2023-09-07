@@ -7,7 +7,7 @@ export function EntriesList({ entriesList, routerId }) {
   );
 
   if (pictureWithInitialEntires.length === 0) {
-    return <p>There are no comments yet!</p>;
+    return <p style={{ marginBottom: "4rem" }}>There are no comments yet!</p>;
   } else {
     return (
       <>
@@ -15,8 +15,8 @@ export function EntriesList({ entriesList, routerId }) {
           <StyledSection key={entry.id}>
             {index > 0 ? <Divider /> : null}
             <StyledDiv>
-              <time>{entry.date}</time>
-              <h2>{entry.title}</h2>
+              <StyledTime>{entry.date}</StyledTime>
+              <StyledHeading>&quot;{entry.title}&quot;</StyledHeading>
               <StyledEntry>{entry.comment}</StyledEntry>
             </StyledDiv>
           </StyledSection>
@@ -28,20 +28,31 @@ export function EntriesList({ entriesList, routerId }) {
 
 const StyledSection = styled.section`
   display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  width: 85%;
-  gap: 1rem;
+  flex-flow: column wrap;
+  width: 100%;
+  gap: 2rem;
+  margin-bottom: 1.5rem;
+`;
+
+const StyledTime = styled.time`
+  padding-left: 29.5rem;
+  font-size: 12px;
+`;
+
+const StyledHeading = styled.h3`
+  font-weight: 500;
 `;
 
 const StyledDiv = styled.div`
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  margin-top: 1rem;
-  margin-bottom: 2rem;
+  gap: 4px;
+  margin: 1.5rem 0.75rem;
 `;
 
 const StyledEntry = styled.p`
   word-break: break-word;
+  text-align: justify;
+  padding-top: 1rem;
 `;

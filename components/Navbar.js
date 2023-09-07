@@ -1,12 +1,27 @@
 import Link from "next/link";
 import styled from "styled-components";
+import Star from "./Star";
+import { useRouter } from "next/router";
+import FilledStar from "./FilledStar";
+import Artist from "./Artist";
+import Gallery from "./Gallery";
+import FilledGallery from "./FilledGallery";
+import FilledArtist from "./FilledArtist";
 
 export default function Navbar() {
+  const router = useRouter();
+
   return (
     <StyledNavigation>
-      <StyledLink href={"/"}>Overview</StyledLink>
-      <StyledLink href={"/myart"}>My Art</StyledLink>
-      <StyledLink href={"/favorites"}>Favorites</StyledLink>
+      <StyledLink href={"/"}>
+        {router.pathname === "/" ? <FilledGallery /> : <Gallery />}
+      </StyledLink>
+      <StyledLink href={"/myart"}>
+        {router.pathname === "/myart" ? <FilledArtist /> : <Artist />}
+      </StyledLink>
+      <StyledLink href={"/favorites"}>
+        {router.pathname === "/favorites" ? <FilledStar /> : <Star />}
+      </StyledLink>
     </StyledNavigation>
   );
 }
@@ -17,13 +32,15 @@ const StyledNavigation = styled.nav`
   width: min(600px, 100%);
   display: flex;
   justify-content: space-around;
-  margin-bottom: 2rem;
+  padding-top: 1.5rem;
+  padding-bottom: 1rem;
+  margin-bottom: 0;
+  border-top: solid 2px var(--border-color);
+  background-color: white;
 `;
 
 const StyledLink = styled(Link)`
-  background-color: slateblue;
-  border-radius: 0.5rem;
+  background-color: none;
   padding: 0.5rem;
-  color: white;
   text-decoration: none;
 `;
