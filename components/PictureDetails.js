@@ -20,7 +20,7 @@ export default function PictureDetails({ selectedPicture }) {
       <StyledDetails>
         <StyledUsername>
           <Image
-            src="/Artist.png"
+            src="/artist.png"
             alt="artist icon from flaticon"
             width={24}
             height={24}
