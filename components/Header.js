@@ -16,6 +16,8 @@ export default function Header() {
 }
 
 const StyledHeader = styled.section`
+  display: flex;
+  justify-content: center;
   position: absolute;
   top: 0;
   left: 0;

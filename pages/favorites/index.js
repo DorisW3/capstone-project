@@ -5,7 +5,7 @@ import styled from "@emotion/styled";
 import Link from "next/link";
 import Image from "next/image";
 
-export default function favorites({ images, onToggleFavorite }) {
+export default function Favorites({ images, onToggleFavorite }) {
   const Favorites = images.filter((image) => image.isFavorite);
 
   return (

@@ -12,19 +12,26 @@ export default function Navbar() {
   const router = useRouter();
 
   return (
-    <StyledNavigation>
-      <StyledLink href={"/"}>
-        {router.pathname === "/" ? <FilledGallery /> : <Gallery />}
-      </StyledLink>
-      <StyledLink href={"/myart"}>
-        {router.pathname === "/myart" ? <FilledArtist /> : <Artist />}
-      </StyledLink>
-      <StyledLink href={"/favorites"}>
-        {router.pathname === "/favorites" ? <FilledStar /> : <Star />}
-      </StyledLink>
-    </StyledNavigation>
+    <StyledDiv>
+      <StyledNavigation>
+        <StyledLink href={"/"}>
+          {router.pathname === "/" ? <FilledGallery /> : <Gallery />}
+        </StyledLink>
+        <StyledLink href={"/myart"}>
+          {router.pathname === "/myart" ? <FilledArtist /> : <Artist />}
+        </StyledLink>
+        <StyledLink href={"/favorites"}>
+          {router.pathname === "/favorites" ? <FilledStar /> : <Star />}
+        </StyledLink>
+      </StyledNavigation>
+    </StyledDiv>
   );
 }
+
+const StyledDiv = styled.div`
+  display: flex;
+  justify-content: center;
+`;
 
 const StyledNavigation = styled.nav`
   position: fixed;
