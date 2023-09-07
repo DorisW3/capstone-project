@@ -4,7 +4,7 @@ import styled from "styled-components";
 export default function Header() {
   return (
     <StyledHeader>
-      <StyledLogo
+      <Image
         src="/logoPages2.0.png"
         alt="app-logo"
         width={600}
@@ -18,14 +18,9 @@ export default function Header() {
 const StyledHeader = styled.section`
   display: flex;
   justify-content: center;
-  position: absolute;
+  position: sticky;
   top: 0;
   left: 0;
   width: 100%;
   z-index: 1000;
-`;
-
-const StyledLogo = styled(Image)`
-  display: flex;
-  border-bottom: 2px solid var(--border-color);
 `;

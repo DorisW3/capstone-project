@@ -6,6 +6,7 @@ import styled from "styled-components";
 import pictures from "@/lib/db";
 import { SWRConfig } from "swr";
 import Header from "@/components/Header";
+import { useRouter } from "next/router";
 
 // for image upload feature
 async function fetcher(...args) {
@@ -20,6 +21,7 @@ async function fetcher(...args) {
 }
 
 export default function App({ Component, pageProps }) {
+  const router = useRouter();
   // ----- initial entires werden ge-updatet -> new entries können hinzugefügt werden
   const [entriesList, setEntriesList] = useLocalStorageState("initialEntries", {
     defaultValue: initialEntries,
@@ -50,7 +52,7 @@ export default function App({ Component, pageProps }) {
       <SWRConfig value={{ fetcher }}>
         <GlobalStyle />
         <Layout>
-          <Header />
+          {router.pathname === "/login" ? null : <Header />}
           <Component
             {...pageProps}
             handleAddEntry={handleAddEntry}
