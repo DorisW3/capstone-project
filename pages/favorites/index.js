@@ -34,7 +34,7 @@ export default function favorites({ images, onToggleFavorite }) {
                 />
                 <StyledUserName>
                   <Image
-                    src="/Artist.png"
+                    src="/artist.png"
                     alt="artist icon from flaticon"
                     width={24}
                     height={24}
