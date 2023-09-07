@@ -11,7 +11,7 @@ export default function favorites({ images, onToggleFavorite }) {
   return (
     <>
       {Favorites.length === 0 ? (
-        <p style={{ marginTop: "4rem" }}>There are no favorites yet!</p>
+        <StyledInfo>There are no favorites yet!</StyledInfo>
       ) : (
         <StyledBody>
           {Favorites.map((Favorite) => (
@@ -51,8 +51,12 @@ export default function favorites({ images, onToggleFavorite }) {
   );
 }
 
+const StyledInfo = styled.p`
+  margin-top: 4rem;
+`;
+
 const StyledBody = styled.ul`
-  margin-top: 14rem;
+  margin-top: 4rem;
 `;
 
 const StyledListItem = styled.li`

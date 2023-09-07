@@ -29,51 +29,57 @@ export default function EntryForm({ onAddEntry, routerId }) {
   }
 
   return (
-    <StyledForm onSubmit={handleSubmitEntry}>
-      <StyledHeading>New Entry</StyledHeading>
-      <StyledDivTitle>
-        <StyledLabel htmlFor="title">Title</StyledLabel>
-        <StyledInputTitle
-          type="text"
-          maxLength="50"
-          rows="2"
-          id="title"
-          name="title"
-          required
-        ></StyledInputTitle>
-      </StyledDivTitle>
-      <StyledDivComment>
-        <StyledLabel htmlFor="comment">Comment</StyledLabel>
-        <StyledTextarea
-          type="text"
-          id="comment"
-          name="comment"
-          maxLength="480"
-          rows={3}
-          placeholder="Remember, be nice!"
-          required
-        ></StyledTextarea>
-      </StyledDivComment>
-      <div>
-        <StyledButton type="submit">
-          <FontAwesomeIcon
-            icon={faPaintbrush}
-            width={15}
-            height={15}
-            style={{ position: "static" }}
-          />
-          {"  "}create
-        </StyledButton>
-      </div>
-    </StyledForm>
+    <StyledSection>
+      <StyledForm onSubmit={handleSubmitEntry}>
+        <StyledHeading>New Entry</StyledHeading>
+        <StyledDivTitle>
+          <StyledLabel htmlFor="title">Title</StyledLabel>
+          <StyledInputTitle
+            type="text"
+            maxLength="50"
+            rows="2"
+            id="title"
+            name="title"
+            required
+          ></StyledInputTitle>
+        </StyledDivTitle>
+        <StyledDivComment>
+          <StyledLabel htmlFor="comment">Comment</StyledLabel>
+          <StyledTextarea
+            type="text"
+            id="comment"
+            name="comment"
+            maxLength="480"
+            rows={3}
+            placeholder="Remember, be nice!"
+            required
+          ></StyledTextarea>
+        </StyledDivComment>
+        <div>
+          <StyledButton type="submit">
+            <FontAwesomeIcon
+              icon={faPaintbrush}
+              width={15}
+              height={15}
+              style={{ position: "static" }}
+            />
+            {"  "}create
+          </StyledButton>
+        </div>
+      </StyledForm>
+    </StyledSection>
   );
 }
 
+const StyledSection = styled.section`
+  display: flex;
+  justify-content: center;
+`;
+
 const StyledForm = styled.form`
-  width: 100%;
+  width: 90%;
   display: flex;
   flex-direction: column;
-  align-content: center;
   gap: 2rem;
   margin-top: 1.5rem;
   margin-bottom: 1.5rem;
@@ -94,8 +100,8 @@ const StyledDivTitle = styled.div`
   display: flex;
   flex-direction: column;
   align-items: space-around;
-  width: 90%;
-  padding-left: 3rem;
+  width: 100%;
+  padding-left: 0.2rem;
 `;
 
 const StyledLabel = styled.label`
@@ -108,8 +114,8 @@ const StyledDivComment = styled.div`
   display: flex;
   flex-direction: column;
   align-items: space-around;
-  width: 90%;
-  padding-left: 3rem;
+  width: 100%;
+  padding-left: 0.2rem;
 `;
 
 const StyledInputTitle = styled.input`

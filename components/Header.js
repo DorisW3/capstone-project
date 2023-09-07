@@ -24,8 +24,6 @@ const StyledHeader = styled.section`
 `;
 
 const StyledLogo = styled(Image)`
-  background: none;
-  position: fixed;
   display: flex;
-  justify-content: flex-start;
+  border-bottom: 2px solid var(--border-color);
 `;

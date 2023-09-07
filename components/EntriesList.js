@@ -15,10 +15,8 @@ export function EntriesList({ entriesList, routerId }) {
           <StyledSection key={entry.id}>
             {index > 0 ? <Divider /> : null}
             <StyledDiv>
-              <time style={{ paddingLeft: "29.5rem", fontSize: "12px" }}>
-                {entry.date}
-              </time>
-              <h3 style={{ fontWeight: "600" }}>&quot;{entry.title}&quot;</h3>
+              <StyledTime>{entry.date}</StyledTime>
+              <StyledHeading>&quot;{entry.title}&quot;</StyledHeading>
               <StyledEntry>{entry.comment}</StyledEntry>
             </StyledDiv>
           </StyledSection>
@@ -34,6 +32,15 @@ const StyledSection = styled.section`
   width: 100%;
   gap: 2rem;
   margin-bottom: 1.5rem;
+`;
+
+const StyledTime = styled.time`
+  padding-left: 29.5rem;
+  font-size: 12px;
+`;
+
+const StyledHeading = styled.h3`
+  font-weight: 500;
 `;
 
 const StyledDiv = styled.div`

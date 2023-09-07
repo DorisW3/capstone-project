@@ -40,7 +40,7 @@ const StyledMain = styled.main`
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: min(600px, 80%);
+  width: min(600px, 100%);
   margin-inline: auto;
   & ul {
     width: 100%;
@@ -48,7 +48,7 @@ const StyledMain = styled.main`
 `;
 
 const StyledUpload = styled.div`
-  width: 100%;
+  width: 90%;
   border: 1px solid #ccc;
   border-radius: 0.5rem;
   padding: 4rem;

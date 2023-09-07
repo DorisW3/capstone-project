@@ -18,7 +18,7 @@ export default function PictureDetails({ selectedPicture }) {
         priority={true} // bei Bildern mit großer Datenmenge, verbessert der Code das Laden
       />
       <StyledDetails>
-        <p style={{ fontWeight: "bold" }}>
+        <StyledUsername>
           <Image
             src="/Artist.png"
             alt="artist icon from flaticon"
@@ -26,7 +26,7 @@ export default function PictureDetails({ selectedPicture }) {
             height={24}
           />{" "}
           {selectedPicture.username}
-        </p>
+        </StyledUsername>
         <p>&quot;{selectedPicture.theme}&quot;</p>
         <p>{selectedPicture.description}</p>
       </StyledDetails>
@@ -38,6 +38,10 @@ const StyledArcticle = styled.article`
   display: flex;
   flex-direction: column;
   margin-top: 4rem;
+`;
+
+const StyledUsername = styled.p`
+  font-weight: bold;
 `;
 
 const StyledDetails = styled.div`
