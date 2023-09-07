@@ -5,10 +5,10 @@ export default function Header() {
   return (
     <StyledHeader>
       <StyledLogo
-        src="/appLogo2.png"
+        src="/logoPages2.0.png"
         alt="app-logo"
         width={600}
-        height={250}
+        height={100}
         priority={true}
       />
     </StyledHeader>

@@ -52,6 +52,6 @@ const StyledUpload = styled.div`
   border: 1px solid #ccc;
   border-radius: 0.5rem;
   padding: 4rem;
-  margin-top: 14rem;
+  margin-top: 4rem;
   margin-bottom: 3rem;
 `;

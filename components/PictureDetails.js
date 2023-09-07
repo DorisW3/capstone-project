@@ -37,7 +37,7 @@ export default function PictureDetails({ selectedPicture }) {
 const StyledArcticle = styled.article`
   display: flex;
   flex-direction: column;
-  margin-top: 14rem;
+  margin-top: 4rem;
 `;
 
 const StyledDetails = styled.div`
