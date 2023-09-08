@@ -17,12 +17,16 @@ export default createGlobalStyle`
     box-sizing: border-box;
   }
 
-  body {
-    font-family: system-ui;
-    margin: auto;
-    text-align: center;
-    width: 600px;
-    color: var(--font-color);
+
+  @media only screen and (max-width: 600px) {
+    
+    body {
+      font-family: system-ui;
+      min-width: 100vw;
+      overflow-x: hidden;
+      text-align: center;
+      color: var(--font-color);
+    }
   }
 
   ul {
