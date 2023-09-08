@@ -2,11 +2,12 @@ import GlobalStyle from "../styles";
 import Layout from "@/components/Layout";
 import initialEntries from "@/lib/commentsdb";
 import useLocalStorageState from "use-local-storage-state";
-import styled from "styled-components";
 import pictures from "@/lib/db";
 import { SWRConfig } from "swr";
 import Header from "@/components/Header";
 import { useRouter } from "next/router";
+import { useState } from "react";
+import Login from "@/components/Login";
 
 // for image upload feature
 async function fetcher(...args) {
@@ -47,29 +48,28 @@ export default function App({ Component, pageProps }) {
     );
   }
 
+  const [isLoggedIn, setIsLoggedIn] = useState();
   return (
     <>
       <SWRConfig value={{ fetcher }}>
         <GlobalStyle />
 
-        {router.pathname === "/login" ? null : <Header />}
-        <Component
-          {...pageProps}
-          handleAddEntry={handleAddEntry}
-          entriesList={entriesList}
-          onToggleFavorite={handleToggleFavorite}
-          images={images}
-          handleAddImage={handleAddImage}
-        />
-        {router.pathname === "/login" ? null : <Layout />}
+        <Header />
+        {isLoggedIn ? null : <Login setIsLoggedIn={setIsLoggedIn} />}
+        {isLoggedIn ? (
+          <Component
+            {...pageProps}
+            handleAddEntry={handleAddEntry}
+            entriesList={entriesList}
+            onToggleFavorite={handleToggleFavorite}
+            images={images}
+            handleAddImage={handleAddImage}
+            isLoggedIn={isLoggedIn}
+            setIsLoggedIn={setIsLoggedIn}
+          />
+        ) : null}
+        <Layout />
       </SWRConfig>
     </>
   );
 }
-
-const StyledAppName = styled.h1`
-  color: var(--font-color);
-  border-bottom: 2px solid var(--background-color);
-  margin-bottom: 1rem;
-  padding-bottom: 2rem;
-`;

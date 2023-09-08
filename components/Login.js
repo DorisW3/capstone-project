@@ -1,12 +1,8 @@
-import { render } from "@testing-library/react";
 import Image from "next/image";
 import { useRouter } from "next/router";
-import { useState } from "react";
 import styled from "styled-components";
 
-export default function LoginPage() {
-  const [isLoggedIn, setIsLoggedIn] = useState();
-
+export default function Login({ isLoggedIn, setIsLoggedIn }) {
   const router = useRouter();
 
   function handleSubmitLogin(event) {
@@ -94,8 +90,6 @@ export default function LoginPage() {
   );
 }
 
-//router.pathname === "/myart"
-
 const StyledSection = styled.section`
   display: flex;
   flex-direction: column;
@@ -106,7 +100,7 @@ const StyledSection = styled.section`
   border: 2px solid var(--border-color);
   border-radius: 4px;
   padding: 4rem;
-  margin: 8rem 4.5rem;
+  margin: 4rem 2rem;
 `;
 
 const StyledLabel = styled.label`
