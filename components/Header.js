@@ -19,7 +19,7 @@ const StyledHeader = styled.section`
   display: flex;
   justify-content: center;
   position: sticky;
-  top: 0;
+  top: -0.25rem;
   left: 0;
   width: 100%;
   z-index: 1000;

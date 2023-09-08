@@ -51,17 +51,17 @@ export default function App({ Component, pageProps }) {
     <>
       <SWRConfig value={{ fetcher }}>
         <GlobalStyle />
-        <Layout>
-          {router.pathname === "/login" ? null : <Header />}
-          <Component
-            {...pageProps}
-            handleAddEntry={handleAddEntry}
-            entriesList={entriesList}
-            onToggleFavorite={handleToggleFavorite}
-            images={images}
-            handleAddImage={handleAddImage}
-          />
-        </Layout>
+
+        {router.pathname === "/login" ? null : <Header />}
+        <Component
+          {...pageProps}
+          handleAddEntry={handleAddEntry}
+          entriesList={entriesList}
+          onToggleFavorite={handleToggleFavorite}
+          images={images}
+          handleAddImage={handleAddImage}
+        />
+        {router.pathname === "/login" ? null : <Layout />}
       </SWRConfig>
     </>
   );

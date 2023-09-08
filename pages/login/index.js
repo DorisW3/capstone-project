@@ -1,44 +1,100 @@
+import { render } from "@testing-library/react";
 import Image from "next/image";
+import { useRouter } from "next/router";
+import { useState } from "react";
 import styled from "styled-components";
 
 export default function LoginPage() {
+  const [isLoggedIn, setIsLoggedIn] = useState();
+
+  const router = useRouter();
+
+  function handleSubmitLogin(event) {
+    event.preventDefault();
+
+    const formData = new FormData(event.target);
+    const data = Object.fromEntries(formData);
+
+    const dummyUser = {
+      username: data.username,
+      password: data.password,
+    };
+
+    console.log(data);
+
+    const admin = {
+      username: "dolorisi",
+      password: "firstApp09.23",
+    };
+
+    console.log(admin);
+
+    if (admin.username !== dummyUser.username) {
+      setIsLoggedIn(false);
+      return "invalid username";
+    }
+
+    if (admin.password !== dummyUser.password) {
+      setIsLoggedIn(false);
+      return "invalid password";
+    } else {
+      setIsLoggedIn(true);
+    }
+
+    event.target.reset();
+    event.target.elements.username.focus();
+  }
+
   return (
     <StyledSection>
       <Image
-        src="/appLogo2.0.png"
+        src="/appLogo3.0.png"
         alt="app-logo"
-        width={300}
-        height={300}
+        width={375}
+        height={375}
         priority={true}
       />
-      <StyledForm>
-        <StyledLabel htmlFor="username"></StyledLabel>
-        <StyledInputTitle
-          type="text"
-          maxLength="15"
-          minLength="3"
-          id="username"
-          name="username"
-          placeholder="username"
-          required
-        ></StyledInputTitle>
-        <StyledLabel htmlFor="password"></StyledLabel>
-        <StyledInputTitle
-          type="text"
-          maxLength="40"
-          minLength="8"
-          id="password"
-          name="password"
-          placeholder="password"
-          required
-        ></StyledInputTitle>
+      <StyledForm onSubmit={handleSubmitLogin}>
+        <div>
+          <StyledLabel htmlFor="username"></StyledLabel>
+          <StyledInput
+            type="text"
+            maxLength="15"
+            minLength="3"
+            id="username"
+            name="username"
+            placeholder="username"
+            required
+          />
+        </div>
+        <div>
+          <StyledLabel htmlFor="password"></StyledLabel>
+          <StyledInput
+            type="text"
+            maxLength="40"
+            minLength="8"
+            id="password"
+            name="password"
+            placeholder="password"
+            required
+          />
+        </div>
         <StyledButton type="submit">
           <Image src="/submit.png" alt="submit" width={100} height={35} />
+          {isLoggedIn === true ? (
+            <p>Logged in successfully!</p>
+          ) : isLoggedIn === false ? (
+            <p>Login failed</p>
+          ) : (
+            <p>{""}</p>
+          )}
         </StyledButton>
       </StyledForm>
     </StyledSection>
   );
 }
+
+//router.pathname === "/myart"
 
 const StyledSection = styled.section`
   display: flex;
@@ -46,9 +102,11 @@ const StyledSection = styled.section`
   align-items: center;
   align-self: center;
   width: auto;
+  min-width: 400px;
   border: 2px solid var(--border-color);
   border-radius: 4px;
-  padding: 2rem;
+  padding: 4rem;
+  margin: 8rem 4.5rem;
 `;
 
 const StyledLabel = styled.label`
@@ -56,7 +114,7 @@ const StyledLabel = styled.label`
   justify-content: flex-start;
   margin: 0.5rem 0.5rem;
 `;
-const StyledInputTitle = styled.input`
+const StyledInput = styled.input`
   border: 1px solid var(--form-color);
   border-radius: 4px;
   resize: none;
@@ -68,11 +126,9 @@ const StyledInputTitle = styled.input`
 `;
 
 const StyledForm = styled.form`
-  width: 100%;
+  width: 120%;
   display: flex;
   flex-direction: column;
-  margin-top: 1.5rem;
-  margin-bottom: 1.5rem;
   border: none;
   padding: 2rem;
 `;
