@@ -22,7 +22,8 @@ export default createGlobalStyle`
     
     body {
       font-family: system-ui;
-      margin: auto;
+      min-width: 100vw;
+      overflow-x: hidden;
       text-align: center;
       color: var(--font-color);
     }

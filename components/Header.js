@@ -21,6 +21,6 @@ const StyledHeader = styled.section`
   position: sticky;
   top: -0.25rem;
   left: 0;
-  width: 100%;
-  z-index: 1000;
+  width: 100vw;
+  z-index: 1;
 `;

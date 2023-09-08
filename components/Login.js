@@ -16,14 +16,10 @@ export default function Login({ isLoggedIn, setIsLoggedIn }) {
       password: data.password,
     };
 
-    console.log(data);
-
     const admin = {
       username: "dolorisi",
       password: "firstApp09.23",
     };
-
-    console.log(admin);
 
     if (
       admin.username !== dummyUser.username ||

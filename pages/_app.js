@@ -8,6 +8,7 @@ import Header from "@/components/Header";
 import { useRouter } from "next/router";
 import { useState } from "react";
 import Login from "@/components/Login";
+import LogoutButton from "@/components/Logout";
 
 // for image upload feature
 async function fetcher(...args) {
@@ -48,13 +49,22 @@ export default function App({ Component, pageProps }) {
     );
   }
 
-  const [isLoggedIn, setIsLoggedIn] = useState();
+  const [isLoggedIn, setIsLoggedIn] = useLocalStorageState("LoggedIn", {
+    defaultValue: false,
+  });
+
+  function handleLogout() {
+    setIsLoggedIn(false);
+    router.push("/");
+  }
+
   return (
     <>
       <SWRConfig value={{ fetcher }}>
         <GlobalStyle />
 
-        <Header />
+        {isLoggedIn ? <Header /> : false}
+        {isLoggedIn ? <LogoutButton handleLogout={handleLogout} /> : false}
         {isLoggedIn ? null : <Login setIsLoggedIn={setIsLoggedIn} />}
         {isLoggedIn ? (
           <Component
@@ -66,9 +76,10 @@ export default function App({ Component, pageProps }) {
             handleAddImage={handleAddImage}
             isLoggedIn={isLoggedIn}
             setIsLoggedIn={setIsLoggedIn}
+            handleLogout={handleLogout}
           />
         ) : null}
-        <Layout />
+        {isLoggedIn ? <Layout /> : false}
       </SWRConfig>
     </>
   );
