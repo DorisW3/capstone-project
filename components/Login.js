@@ -5,7 +5,7 @@ import styled from "styled-components";
 export default function Login({ isLoggedIn, setIsLoggedIn }) {
   const router = useRouter();
 
-  function handleSubmitLogin(event) {
+  async function handleSubmitLogin(event) {
     event.preventDefault();
 
     const formData = new FormData(event.target);
@@ -25,20 +25,19 @@ export default function Login({ isLoggedIn, setIsLoggedIn }) {
 
     console.log(admin);
 
-    if (admin.username !== dummyUser.username) {
+    if (
+      admin.username !== dummyUser.username ||
+      admin.password !== dummyUser.password
+    ) {
       setIsLoggedIn(false);
-      return "invalid username";
-    }
-
-    if (admin.password !== dummyUser.password) {
-      setIsLoggedIn(false);
-      return "invalid password";
+      event.target.reset();
+      event.target.elements.username.focus();
+      return alert("Invalid username or password!");
     } else {
       setIsLoggedIn(true);
+      await router.push("/");
+      alert("Login successful!");
     }
-
-    event.target.reset();
-    event.target.elements.username.focus();
   }
 
   return (
@@ -78,9 +77,9 @@ export default function Login({ isLoggedIn, setIsLoggedIn }) {
         <StyledButton type="submit">
           <Image src="/submit.png" alt="submit" width={100} height={35} />
           {isLoggedIn === true ? (
-            <p>Logged in successfully!</p>
+            alert("Login successful!")
           ) : isLoggedIn === false ? (
-            <p>Login failed</p>
+            alert("Unvalid username or password")
           ) : (
             <p>{""}</p>
           )}
