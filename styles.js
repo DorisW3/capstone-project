@@ -16,18 +16,16 @@ export default createGlobalStyle`
     padding: 0;
     box-sizing: border-box;
   }
-
-
-  @media only screen and (max-width: 600px) {
     
     body {
       font-family: system-ui;
-      min-width: 100vw;
+      width: 414px;
       overflow-x: hidden;
       text-align: center;
       color: var(--font-color);
+      margin: auto;
     }
-  }
+
 
   ul {
     list-style-type: none;

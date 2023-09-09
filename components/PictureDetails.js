@@ -49,7 +49,7 @@ const StyledDetails = styled.div`
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: 4px;
+  gap: 2z1px;
   margin: 0.5rem 0.5rem;
 `;
 

@@ -18,6 +18,6 @@ const StyledMain = styled.main`
   flex-direction: column;
   align-items: center;
   & ul {
-    width: 100vw;
+    width: 100%;
   }
 `;

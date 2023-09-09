@@ -7,6 +7,7 @@ import FilledGallery from "./FilledGallery";
 import FilledStar from "./FilledStar";
 import Gallery from "./Gallery";
 import Star from "./Star";
+import BlackStar from "./BlackStar";
 
 export default function Navbar() {
   const router = useRouter();
@@ -21,7 +22,7 @@ export default function Navbar() {
           {router.pathname === "/myart" ? <FilledArtist /> : <Artist />}
         </StyledLink>
         <StyledLink href={"/favorites"}>
-          {router.pathname === "/favorites" ? <FilledStar /> : <Star />}
+          {router.pathname === "/favorites" ? <FilledStar /> : <BlackStar />}
         </StyledLink>
       </StyledNavigation>
     </StyledDiv>
@@ -36,7 +37,7 @@ const StyledDiv = styled.div`
 const StyledNavigation = styled.nav`
   position: fixed;
   bottom: -0.1rem;
-  width: min(600px, 100%);
+  width: min(414px, 100%);
   display: flex;
   justify-content: space-around;
   padding-top: 0.25rem;
