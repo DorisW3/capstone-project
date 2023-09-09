@@ -1,7 +1,7 @@
-import { uid } from "uid";
-import styled from "styled-components";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPaintbrush } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import styled from "styled-components";
+import { uid } from "uid";
 
 export default function EntryForm({ onAddEntry, routerId }) {
   function handleSubmitEntry(event) {

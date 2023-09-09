@@ -7,8 +7,8 @@ export default function Header() {
       <Image
         src="/logoPages2.0.png"
         alt="app-logo"
-        width={600}
-        height={100}
+        width={414}
+        height={81.5}
         priority={true}
       />
     </StyledHeader>

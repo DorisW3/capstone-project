@@ -1,12 +1,12 @@
 import Link from "next/link";
-import styled from "styled-components";
-import Star from "./Star";
 import { useRouter } from "next/router";
-import FilledStar from "./FilledStar";
+import styled from "styled-components";
 import Artist from "./Artist";
-import Gallery from "./Gallery";
-import FilledGallery from "./FilledGallery";
 import FilledArtist from "./FilledArtist";
+import FilledGallery from "./FilledGallery";
+import FilledStar from "./FilledStar";
+import Gallery from "./Gallery";
+import Star from "./Star";
 
 export default function Navbar() {
   const router = useRouter();
@@ -35,14 +35,14 @@ const StyledDiv = styled.div`
 
 const StyledNavigation = styled.nav`
   position: fixed;
-  bottom: 0;
+  bottom: -0.1rem;
   width: min(600px, 100%);
   display: flex;
   justify-content: space-around;
-  padding-top: 1.5rem;
-  padding-bottom: 1rem;
+  padding-top: 0.25rem;
+  padding-bottom: 0.25rem;
   margin-bottom: 0;
-  border-top: solid 2px var(--border-color);
+  border-top: solid 0.5px var(--border-color);
   background-color: white;
 `;
 

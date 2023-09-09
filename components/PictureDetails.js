@@ -1,7 +1,6 @@
-import pictures from "@/lib/db";
-import StyledImage from "./StyledImage";
-import styled from "styled-components";
 import Image from "next/image";
+import styled from "styled-components";
+import StyledImage from "./StyledImage";
 
 export default function PictureDetails({ selectedPicture }) {
   if (!selectedPicture) {

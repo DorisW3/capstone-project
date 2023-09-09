@@ -1,10 +1,10 @@
-import styled from "styled-components";
-import StyledImage from "./StyledImage.js";
-import Link from "next/link";
-import FavoriteButton from "./FavoriteButton.js";
-import { useEffect, useState } from "react";
-import FollowButton from "./FollowButton.js";
 import Image from "next/image";
+import Link from "next/link";
+import { useEffect, useState } from "react";
+import styled from "styled-components";
+import FavoriteButton from "./FavoriteButton.js";
+import FollowButton from "./FollowButton.js";
+import StyledImage from "./StyledImage.js";
 
 export default function Overview({ onToggleFavorite, images }) {
   const [shuffledPictures, setShuffledPictures] = useState([]);

@@ -1,14 +1,13 @@
-import GlobalStyle from "../styles";
-import Layout from "@/components/Layout";
-import initialEntries from "@/lib/commentsdb";
-import useLocalStorageState from "use-local-storage-state";
-import pictures from "@/lib/db";
-import { SWRConfig } from "swr";
 import Header from "@/components/Header";
-import { useRouter } from "next/router";
-import { useState } from "react";
+import Layout from "@/components/Layout";
 import Login from "@/components/Login";
 import LogoutButton from "@/components/Logout";
+import initialEntries from "@/lib/commentsdb";
+import pictures from "@/lib/db";
+import { useRouter } from "next/router";
+import { SWRConfig } from "swr";
+import useLocalStorageState from "use-local-storage-state";
+import GlobalStyle from "../styles";
 
 // for image upload feature
 async function fetcher(...args) {

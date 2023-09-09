@@ -29,14 +29,14 @@ export function EntriesList({ entriesList, routerId }) {
 const StyledSection = styled.section`
   display: flex;
   flex-flow: column wrap;
-  width: 100%;
-  gap: 2rem;
-  margin-bottom: 1.5rem;
+  width: auto;
+  gap: 0.5rem;
+  margin-bottom: 0;
 `;
 
 const StyledTime = styled.time`
-  padding-left: 29.5rem;
-  font-size: 12px;
+  padding-left: 80%;
+  font-size: 11px;
 `;
 
 const StyledHeading = styled.h3`
@@ -52,6 +52,7 @@ const StyledDiv = styled.div`
 `;
 
 const StyledEntry = styled.p`
+  font-size: 12px;
   word-break: break-word;
   text-align: justify;
   padding-top: 1rem;

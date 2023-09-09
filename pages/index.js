@@ -1,5 +1,5 @@
-import styled from "styled-components";
 import Overview from "@/components/Overview";
+import styled from "styled-components";
 
 export default function Homepage({ onToggleFavorite, isFavorite, images }) {
   return (

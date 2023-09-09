@@ -5,7 +5,6 @@ const StyledImage = styled(Image)`
   object-fit: fill;
   width: 100%;
   height: auto;
-  border-radius: 4px;
 `;
 
 export default StyledImage;
