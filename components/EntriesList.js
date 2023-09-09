@@ -30,8 +30,7 @@ const StyledSection = styled.section`
   display: flex;
   flex-flow: column wrap;
   width: auto;
-  gap: 0.5rem;
-  margin-bottom: 0;
+  margin: 0.25rem 1.5rem 0.5rem 1.5rem;
 `;
 
 const StyledTime = styled.time`
@@ -41,6 +40,7 @@ const StyledTime = styled.time`
 
 const StyledHeading = styled.h3`
   font-weight: 500;
+  font-size: medium;
 `;
 
 const StyledDiv = styled.div`
@@ -48,12 +48,12 @@ const StyledDiv = styled.div`
   flex-direction: column;
   align-items: flex-start;
   gap: 4px;
-  margin: 1.5rem 0.75rem;
+  margin: 1rem 0.75rem;
 `;
 
 const StyledEntry = styled.p`
-  font-size: 12px;
+  font-size: 13px;
   word-break: break-word;
   text-align: justify;
-  padding-top: 1rem;
+  padding: 1rem 0 0.25rem 0;
 `;

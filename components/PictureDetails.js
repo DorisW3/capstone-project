@@ -48,5 +48,5 @@ const StyledDetails = styled.div`
   flex-direction: column;
   align-items: flex-start;
   gap: 4px;
-  margin: 1rem 0.5rem;
+  margin: 0.5rem 0.5rem;
 `;
