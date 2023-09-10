@@ -1,7 +1,6 @@
-import pictures from "@/lib/db";
-import StyledImage from "./StyledImage";
-import styled from "styled-components";
 import Image from "next/image";
+import styled from "styled-components";
+import StyledImage from "./StyledImage";
 
 export default function PictureDetails({ selectedPicture }) {
   if (!selectedPicture) {
@@ -22,13 +21,13 @@ export default function PictureDetails({ selectedPicture }) {
           <Image
             src="/artist.png"
             alt="artist icon from flaticon"
-            width={24}
-            height={24}
+            width={20}
+            height={18}
           />{" "}
           {selectedPicture.username}
         </StyledUsername>
         <p>&quot;{selectedPicture.theme}&quot;</p>
-        <p>{selectedPicture.description}</p>
+        <StyledDescription>{selectedPicture.description}</StyledDescription>
       </StyledDetails>
     </StyledArcticle>
   );
@@ -37,17 +36,25 @@ export default function PictureDetails({ selectedPicture }) {
 const StyledArcticle = styled.article`
   display: flex;
   flex-direction: column;
-  margin-top: 4rem;
+  margin: 4rem 0 2rem 0;
 `;
 
 const StyledUsername = styled.p`
-  font-weight: bold;
+  font-weight: 500;
+  font-size: medium;
 `;
 
 const StyledDetails = styled.div`
+  font-size: small;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: 4px;
-  margin: 1rem 0.5rem;
+  gap: 2z1px;
+  margin: 0.5rem 0.5rem;
+`;
+
+const StyledDescription = styled.p`
+  font-size: small;
+  word-break: break-word;
+  text-align: justify;
 `;

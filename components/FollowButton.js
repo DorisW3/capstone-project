@@ -1,6 +1,6 @@
+import Image from "next/image";
 import { useState } from "react";
 import styled from "styled-components";
-import Image from "next/image";
 
 export default function FollowButton() {
   const [isFollowing, setIsFollowing] = useState(false);

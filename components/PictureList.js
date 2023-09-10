@@ -1,8 +1,8 @@
-import styled from "styled-components";
-import StyledImage from "./StyledImage.js";
 import Link from "next/link.js";
-import FavoriteButton from "./FavoriteButton.js";
+import styled from "styled-components";
 import useSWR from "swr";
+import FavoriteButton from "./FavoriteButton.js";
+import StyledImage from "./StyledImage.js";
 
 export default function PictureList({ onToggleFavorite, images }) {
   const { data, error } = useSWR("/api/images");

@@ -1,8 +1,8 @@
 import pictures from "@/lib/db";
+import styled from "@emotion/styled";
+import Link from "next/link";
 import FavoriteButton from "./FavoriteButton";
 import StyledImage from "./StyledImage";
-import Link from "next/link";
-import styled from "@emotion/styled";
 
 export default function Favorites({ onToggleFavorite, isFavorite }) {
   return (

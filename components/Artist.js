@@ -5,8 +5,8 @@ export default function Artist() {
     <Image
       src="/artist.png"
       alt="artist icon from flaticon"
-      width={45}
-      height={45}
+      width={35}
+      height={35}
     />
   );
 }

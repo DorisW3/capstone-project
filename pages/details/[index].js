@@ -1,6 +1,6 @@
+import { EntriesList } from "@/components/EntriesList";
 import EntryForm from "@/components/EntryForm";
 import PictureDetails from "@/components/PictureDetails";
-import { EntriesList } from "@/components/EntriesList";
 import { useRouter } from "next/router";
 
 export default function DetailsComments({
