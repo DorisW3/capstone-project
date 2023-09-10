@@ -40,7 +40,9 @@ function ImageUploadForm({ onAddImage }) {
       onAddImage(newImage);
 
       event.target.reset();
-      event.target.elements.title.focus();
+      setTimeout(() => {
+        setUploadStatus("");
+      }, 3000);
     } catch (error) {
       setError(error);
     }
@@ -51,19 +53,26 @@ function ImageUploadForm({ onAddImage }) {
       <StyledHeading>Image Upload</StyledHeading>
       <Form onSubmit={submitImage}>
         <label htmlFor="file">
-          <StyledFileInput type="file" name="file" aria-label="file upload" />
+          <StyledFileInput
+            type="file"
+            name="file"
+            aria-label="file upload"
+            required
+          />
         </label>
         <StyledInput
           type="text"
           name="username"
           placeholder="username"
           aria-label="username"
+          required
         />
         <StyledInput
           type="text"
           name="theme"
           placeholder="theme / title"
           aria-label="theme or title"
+          required
         />
         <StyledDescription
           type="textarea"
@@ -71,18 +80,19 @@ function ImageUploadForm({ onAddImage }) {
           placeholder="description"
           aria-label="description"
           rows="3"
+          required
         />
         <StyledButton type="submit">
-          <FontAwesomeIcon
+          {/* <FontAwesomeIcon
             icon={faPlus}
             width={15}
             height={15}
             style={{ position: "static", fontWeight: "bold" }}
           />
-          {"  "}Upload
+          {"  "} */}
+          Upload
         </StyledButton>
         <p>{uploadStatus}</p>
-        {/*we use conditional rendering */}
         {error && <p>{error.message}</p>}
       </Form>
     </>
@@ -153,10 +163,6 @@ const StyledFileInput = styled.input`
   background-color: var(--background-color);
   padding: 22px;
   border-radius: 16px;
-  &:hover {
-    background-color: #dcdcdc;
-    cursor: pointer;
-  }
 `;
 
 export default ImageUploadForm;
