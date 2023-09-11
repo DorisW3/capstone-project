@@ -7,8 +7,8 @@ export default function LogoutButton({ handleLogout }) {
       <Image
         src="/logout.png"
         alt="logout icon from flaticon"
-        width={25}
-        height={25}
+        width={20}
+        height={20}
       />
     </StyledButton>
   );

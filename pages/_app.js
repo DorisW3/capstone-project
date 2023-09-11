@@ -57,6 +57,13 @@ export default function App({ Component, pageProps }) {
     router.push("/");
   }
 
+  function handleDelete(idDeleteImage) {
+    setImages(images.filter((image) => image.id !== idDeleteImage));
+    router.push("/myart");
+
+    console.log(setImages, "img");
+  }
+
   return (
     <>
       <SWRConfig value={{ fetcher }}>
@@ -76,6 +83,7 @@ export default function App({ Component, pageProps }) {
             isLoggedIn={isLoggedIn}
             setIsLoggedIn={setIsLoggedIn}
             handleLogout={handleLogout}
+            handleDelete={handleDelete}
           />
         ) : null}
         {isLoggedIn ? <Layout /> : false}

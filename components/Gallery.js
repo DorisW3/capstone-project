@@ -5,8 +5,8 @@ export default function Gallery() {
     <Image
       src="/gallery.png"
       alt="gallery icon from flaticon"
-      width={35}
-      height={35}
+      width={30}
+      height={30}
     />
   );
 }

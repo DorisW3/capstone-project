@@ -5,8 +5,8 @@ export default function FilledGallery() {
     <Image
       src="/filledGallery.png"
       alt="filled gallery icon from flaticon"
-      width={36}
-      height={36}
+      width={31}
+      height={31}
     />
   );
 }

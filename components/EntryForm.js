@@ -120,9 +120,9 @@ const StyledDivComment = styled.div`
 
 const StyledInputTitle = styled.input`
   border: 1px solid var(--form-color);
-  border-radius: 4px;
+  border-radius: 3px;
   resize: none;
-  padding: 8px 20px;
+  padding: 6px;
   &:focus {
     outline: none;
     box-shadow: 0 0 0 0.05rem var(--violette-color);
@@ -131,10 +131,10 @@ const StyledInputTitle = styled.input`
 
 const StyledTextarea = styled.textarea`
   border: 1px solid var(--form-color);
-  border-radius: 4px;
+  border-radius: 3px;
   resize: vertical;
   max-height: 600px;
-  padding: 25px 20px;
+  padding: 6px;
   &:focus {
     outline: none;
     box-shadow: 0 0 0 0.05rem var(--violette-color);

@@ -10,6 +10,7 @@ export default function MyArt({
   images,
   setImages,
   handleAddImage,
+  handleDelete,
 }) {
   return (
     <>
@@ -29,6 +30,7 @@ export default function MyArt({
           images={images}
           setImages={setImages}
           handleAddImage={handleAddImage}
+          handleDelete={handleDelete}
         />
       </StyledMain>
     </>

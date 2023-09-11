@@ -3,8 +3,13 @@ import styled from "styled-components";
 import useSWR from "swr";
 import FavoriteButton from "./FavoriteButton.js";
 import StyledImage from "./StyledImage.js";
+import DeleteButton from "./DeleteButton.js";
 
-export default function PictureList({ onToggleFavorite, images }) {
+export default function PictureList({
+  onToggleFavorite,
+  images,
+  handleDelete,
+}) {
   const { data, error } = useSWR("/api/images");
   if (error) return <div>failed to load</div>;
   if (!data) return <div>loading...</div>;
@@ -25,11 +30,14 @@ export default function PictureList({ onToggleFavorite, images }) {
               />
             </Link>
             <StyledSection>
-              <FavoriteButton
-                onToggleFavorite={() => onToggleFavorite(picture.id)}
-                isFavorite={picture.isFavorite}
-              />
               <StyledTheme>&quot;{picture.theme}&quot;</StyledTheme>
+              <StyledDiv>
+                <FavoriteButton
+                  onToggleFavorite={() => onToggleFavorite(picture.id)}
+                  isFavorite={picture.isFavorite}
+                />
+                <DeleteButton onClick={() => handleDelete(picture.id)} />
+              </StyledDiv>
             </StyledSection>
           </StyledListItem>
         ))}
@@ -44,17 +52,22 @@ const StyledListItem = styled.li`
 `;
 
 const StyledSection = styled.section`
+  position: relative;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  margin: 0 2rem;
+  margin: -0.5rem 0;
 `;
 
 const StyledTheme = styled.h2`
   text-align: center;
-  font-size: 1.2rem;
+  font-size: 1rem;
   font-weight: 400;
-  margin-bottom: 3rem;
-  margin-top: 0.75rem;
-  margin-left: 0.75rem;
+  margin: 0.75rem 0 3rem 0.75rem;
+`;
+
+const StyledDiv = styled.div`
+  display: flex;
+  justify-content: end;
+  align-items: flex-start;
 `;

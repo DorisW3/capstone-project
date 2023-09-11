@@ -61,7 +61,7 @@ export default function Login({ isLoggedIn, setIsLoggedIn }) {
         <div>
           <StyledLabel htmlFor="password"></StyledLabel>
           <StyledInput
-            type="text"
+            type="password"
             maxLength="40"
             minLength="8"
             id="password"

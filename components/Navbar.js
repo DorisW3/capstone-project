@@ -2,12 +2,11 @@ import Link from "next/link";
 import { useRouter } from "next/router";
 import styled from "styled-components";
 import Artist from "./Artist";
+import BlackStar from "./BlackStar";
 import FilledArtist from "./FilledArtist";
 import FilledGallery from "./FilledGallery";
 import FilledStar from "./FilledStar";
 import Gallery from "./Gallery";
-import Star from "./Star";
-import BlackStar from "./BlackStar";
 
 export default function Navbar() {
   const router = useRouter();

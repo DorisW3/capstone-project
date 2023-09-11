@@ -11,8 +11,8 @@ export default function FollowButton() {
         <StyledImage
           src="/unfollow2.0.png"
           alt="unfollow"
-          width={100}
-          height={35}
+          width={80}
+          height={30}
           onClick={() => {
             setIsFollowing(!isFollowing);
           }}
@@ -21,8 +21,8 @@ export default function FollowButton() {
         <StyledImage
           src="/follow.png"
           alt="follow"
-          width={100}
-          height={35}
+          width={80}
+          height={30}
           onClick={() => {
             setIsFollowing(!isFollowing);
           }}

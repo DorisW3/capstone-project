@@ -30,10 +30,6 @@ export default function Overview({ onToggleFavorite, images }) {
             />
           </Link>
           <StyledContainer>
-            <FavoriteButton
-              onToggleFavorite={() => onToggleFavorite(picture.id)}
-              isFavorite={picture.isFavorite}
-            />
             <StyledUserName>
               <Image
                 src="/artist.png"
@@ -43,7 +39,14 @@ export default function Overview({ onToggleFavorite, images }) {
               />{" "}
               {picture.username}
             </StyledUserName>
-            <FollowButton />
+            <StyledDiv>
+              <FavoriteButton
+                onToggleFavorite={() => onToggleFavorite(picture.id)}
+                isFavorite={picture.isFavorite}
+              />
+
+              <FollowButton />
+            </StyledDiv>
           </StyledContainer>
         </StyledListItem>
       ))}
@@ -60,17 +63,24 @@ const StyledListItem = styled.li`
 `;
 
 const StyledContainer = styled.div`
+  position: relative;
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
-  align-items: center;
-  margin-top: -2.75rem;
+  justify-content: space-between;
+  margin: -0.5rem 0;
 `;
 
 const StyledUserName = styled.h2`
   text-align: center;
+  font-size: 1rem;
   font-weight: 400;
-  font-size: 1.2rem;
-  margin-bottom: 4rem;
-  padding-top: 3.85rem;
+  margin: 0.75rem 0 3rem 0.5rem;
+`;
+
+const StyledDiv = styled.div`
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  margin-top: -1.75rem;
+  margin-right: 0.5rem;
 `;
