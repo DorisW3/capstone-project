@@ -5,8 +5,8 @@ export default function FilledArtist() {
     <Image
       src="/filledArtist.png"
       alt="filled artist icon from flaticon"
-      width={35}
-      height={35}
+      width={30}
+      height={30}
     />
   );
 }

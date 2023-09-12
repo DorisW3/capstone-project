@@ -50,16 +50,16 @@ function ImageUploadForm({ onAddImage }) {
 
   return (
     <>
-      <StyledHeading>Image Upload</StyledHeading>
       <Form onSubmit={submitImage}>
-        <label htmlFor="file">
-          <StyledFileInput
-            type="file"
-            name="file"
-            aria-label="file upload"
-            required
-          />
-        </label>
+        <StyledHeading>Image Upload</StyledHeading>
+        <label htmlFor="file" />
+        <StyledFileInput
+          type="file"
+          name="file"
+          aria-label="file upload"
+          required
+        />
+        <label htmlFor="username" />
         <StyledInput
           type="text"
           name="username"
@@ -67,6 +67,7 @@ function ImageUploadForm({ onAddImage }) {
           aria-label="username"
           required
         />
+        <label htmlFor="theme" />
         <StyledInput
           type="text"
           name="theme"
@@ -74,6 +75,7 @@ function ImageUploadForm({ onAddImage }) {
           aria-label="theme or title"
           required
         />
+        <label htmlFor="description" />
         <StyledDescription
           type="textarea"
           name="description"
@@ -101,7 +103,7 @@ function ImageUploadForm({ onAddImage }) {
 const Form = styled.form`
   display: flex;
   flex-direction: column;
-  margin: 2rem auto;
+  margin: -1rem -1rem;
 `;
 
 const StyledHeading = styled.h2`
@@ -110,6 +112,7 @@ const StyledHeading = styled.h2`
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-bottom: 2rem;
 `;
 
 const StyledButton = styled.button`
@@ -134,10 +137,10 @@ const StyledButton = styled.button`
 
 const StyledInput = styled.input`
   border: 1px solid var(--form-color);
-  border-radius: 8px;
-  padding: 0.15rem;
-  margin: 0.5rem;
+  padding: 6px;
+  margin-bottom: 1rem;
   border-radius: 3px;
+  width: 100%;
   cursor: pointer;
   &:focus {
     outline: none;
@@ -147,10 +150,10 @@ const StyledInput = styled.input`
 
 const StyledDescription = styled.textarea`
   border: 1px solid var(--form-color);
-  border-radius: 8px;
+  border-radius: 3px;
   resize: vertical;
   max-height: 600px;
-  padding: 25px 20px;
+  padding: 8px;
   &:focus {
     outline: none;
     box-shadow: 0 0 0 0.05rem var(--violette-color);
@@ -158,11 +161,8 @@ const StyledDescription = styled.textarea`
 `;
 
 const StyledFileInput = styled.input`
-  padding: 0.15rem;
-  margin: 0.5rem;
-  background-color: var(--background-color);
-  padding: 22px;
-  border-radius: 16px;
+  margin-left: -1rem;
+  padding: 1rem;
 `;
 
 export default ImageUploadForm;

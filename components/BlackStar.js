@@ -5,8 +5,8 @@ export default function BlackStar() {
     <Image
       src="/blackStar.png"
       alt="black star icon from flaticon"
-      width={30}
-      height={30}
+      width={25}
+      height={25}
     />
   );
 }

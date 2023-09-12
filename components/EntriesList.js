@@ -34,7 +34,7 @@ const StyledSection = styled.section`
 `;
 
 const StyledTime = styled.time`
-  padding-left: 80%;
+  padding-left: 78%;
   font-size: 11px;
 `;
 
