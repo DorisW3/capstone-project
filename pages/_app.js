@@ -58,10 +58,12 @@ export default function App({ Component, pageProps }) {
   }
 
   function handleDelete(idDeleteImage) {
-    setImages(images.filter((image) => image.id !== idDeleteImage));
-    router.push("/myart");
+    const isConfirmed = window.confirm("Are you sure?");
 
-    console.log(setImages, "img");
+    if (isConfirmed) {
+      setImages(images.filter((image) => image.id !== idDeleteImage));
+      router.push("/myart");
+    }
   }
 
   return (

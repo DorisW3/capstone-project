@@ -15,11 +15,11 @@ export default function PictureList({
   if (!data) return <div>loading...</div>;
 
   return (
-    <StyledList>
+    <ul>
       {images
         .filter((picture) => picture.username === "dolorisi") //simulates one specific user, it will replaced by a proper user profile logic later
         .map((picture) => (
-          <StyledListItem key={picture.id}>
+          <li key={picture.id}>
             <Link href={`/details/${picture.id}`}>
               <StyledImage
                 src={picture.image}
@@ -30,44 +30,54 @@ export default function PictureList({
               />
             </Link>
             <StyledSection>
-              <StyledTheme>&quot;{picture.theme}&quot;</StyledTheme>
-              <StyledDiv>
+              <StyledTextDiv>
+                <StyledTheme>&quot;{picture.theme}&quot;</StyledTheme>
+                <StyledDescription>{picture.description}</StyledDescription>
+              </StyledTextDiv>
+              <StyledDivButtons>
                 <FavoriteButton
                   onToggleFavorite={() => onToggleFavorite(picture.id)}
                   isFavorite={picture.isFavorite}
                 />
                 <DeleteButton handleDelete={() => handleDelete(picture.id)} />
-              </StyledDiv>
+              </StyledDivButtons>
             </StyledSection>
-          </StyledListItem>
+          </li>
         ))}
-    </StyledList>
+    </ul>
   );
 }
 
-export const StyledList = styled.ul``;
-
-const StyledListItem = styled.li`
-  position: relative;
-`;
-
 const StyledSection = styled.section`
-  position: relative;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  margin: -0.5rem 0;
+  margin: -0.5rem 0 3rem 0;
+`;
+
+const StyledTextDiv = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  font-size: small;
+  margin: 0.5rem 0.5rem;
 `;
 
 const StyledTheme = styled.h2`
-  text-align: center;
-  font-size: 1rem;
-  font-weight: 400;
-  margin: 0.75rem 0 3rem 0.75rem;
+  font-weight: 500;
+  font-size: medium;
 `;
 
-const StyledDiv = styled.div`
+const StyledDescription = styled.p`
+  font-size: small;
+  word-break: break-word;
+  text-align: start;
+`;
+
+const StyledDivButtons = styled.div`
   display: flex;
-  justify-content: end;
-  align-items: flex-start;
+  justify-content: flex-end;
+  align-items: center;
+  margin-top: -0.75rem;
+  margin-right: -0.5rem;
 `;

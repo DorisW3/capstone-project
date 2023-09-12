@@ -82,7 +82,7 @@ const StyledForm = styled.form`
   flex-direction: column;
   gap: 2rem;
   margin-top: 1.5rem;
-  margin-bottom: 1.5rem;
+  margin-bottom: 2rem;
   border: 1px solid var(--form-color);
   border-radius: 8px;
   padding: 2rem;
@@ -101,13 +101,13 @@ const StyledDivTitle = styled.div`
   flex-direction: column;
   align-items: space-around;
   width: 100%;
-  padding-left: 0.2rem;
+  padding-left: 6px;
 `;
 
 const StyledLabel = styled.label`
   display: flex;
   justify-content: flex-start;
-  margin: 0.5rem 0.5rem;
+  margin: 0.15rem 0.25rem;
 `;
 
 const StyledDivComment = styled.div`
@@ -115,7 +115,7 @@ const StyledDivComment = styled.div`
   flex-direction: column;
   align-items: space-around;
   width: 100%;
-  padding-left: 0.2rem;
+  padding-left: 6px;
 `;
 
 const StyledInputTitle = styled.input`

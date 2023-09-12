@@ -8,7 +8,7 @@ export default function PictureDetails({ selectedPicture }) {
   }
 
   return (
-    <StyledArcticle key={selectedPicture.id}>
+    <StyledArticle key={selectedPicture.id}>
       <StyledImage
         src={selectedPicture.image}
         alt={selectedPicture.theme}
@@ -29,11 +29,11 @@ export default function PictureDetails({ selectedPicture }) {
         <p>&quot;{selectedPicture.theme}&quot;</p>
         <StyledDescription>{selectedPicture.description}</StyledDescription>
       </StyledDetails>
-    </StyledArcticle>
+    </StyledArticle>
   );
 }
 
-const StyledArcticle = styled.article`
+const StyledArticle = styled.article`
   display: flex;
   flex-direction: column;
   margin: 4rem 0 2rem 0;
@@ -49,7 +49,6 @@ const StyledDetails = styled.div`
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: 2z1px;
   margin: 0.5rem 0.5rem;
 `;
 

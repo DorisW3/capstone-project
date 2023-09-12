@@ -50,8 +50,8 @@ function ImageUploadForm({ onAddImage }) {
 
   return (
     <>
-      <StyledHeading>Image Upload</StyledHeading>
       <Form onSubmit={submitImage}>
+        <StyledHeading>Image Upload</StyledHeading>
         <label htmlFor="file" />
         <StyledFileInput
           type="file"
@@ -103,7 +103,7 @@ function ImageUploadForm({ onAddImage }) {
 const Form = styled.form`
   display: flex;
   flex-direction: column;
-  margin: 2rem auto;
+  margin: -1rem -1rem;
 `;
 
 const StyledHeading = styled.h2`
@@ -112,6 +112,7 @@ const StyledHeading = styled.h2`
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-bottom: 2rem;
 `;
 
 const StyledButton = styled.button`
