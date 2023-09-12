@@ -36,7 +36,7 @@ export default function PictureList({
                   onToggleFavorite={() => onToggleFavorite(picture.id)}
                   isFavorite={picture.isFavorite}
                 />
-                <DeleteButton onClick={() => handleDelete(picture.id)} />
+                <DeleteButton handleDelete={() => handleDelete(picture.id)} />
               </StyledDiv>
             </StyledSection>
           </StyledListItem>

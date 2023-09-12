@@ -41,8 +41,8 @@ export default function Login({ isLoggedIn, setIsLoggedIn }) {
       <Image
         src="/appLogo3.0.png"
         alt="app-logo"
-        width={375}
-        height={375}
+        width={325}
+        height={325}
         priority={true}
       />
       <StyledForm onSubmit={handleSubmitLogin}>
@@ -89,11 +89,9 @@ const StyledSection = styled.section`
   display: flex;
   flex-direction: column;
   align-items: center;
-  align-self: center;
   width: auto;
-  min-width: 400px;
   border: 2px solid var(--border-color);
-  border-radius: 4px;
+  border-radius: 8px;
   padding: 4rem;
   margin: 4rem 2rem;
 `;
