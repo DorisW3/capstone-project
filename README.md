@@ -13,7 +13,7 @@ Below the login page and the gallery page with images of various users can be se
 ![left to right: login page, homepage with images of various users, homepage with images of various users](https://github.com/DorisW3/capstone-project/assets/135646413/5349234c-92e6-485c-a74f-37d401ca3c63)
 <br><br><br>
 
-Clicking one picture guides to the details page, where the chosen images is shown with some further information. Among them is a comment feature, where users can write and read comments about the picture: 
+Clicking one picture guides to the details page, where the chosen image is shown with some further information. Among them is a comment feature, where users can write and read comments about the picture: 
 <br><br>
 ![left to right: homepage, detailspage, comment feature](https://github.com/DorisW3/capstone-project/assets/135646413/66d71896-bc7e-4d23-8b06-c598733a7341)
 <br><br><br>
